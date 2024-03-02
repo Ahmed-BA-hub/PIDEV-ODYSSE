@@ -490,6 +490,9 @@
     <service id="App\Form\CivilisationType" class="App\Form\CivilisationType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\HotelType" class="App\Form\HotelType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\ProgrameType" class="App\Form\ProgrameType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -515,10 +518,6 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\EvenementRepository" class="App\Repository\EvenementRepository" autowire="true" autoconfigure="true">
-      <tag name="doctrine.repository_service"/>
-      <argument type="service" id="doctrine"/>
-    </service>
-    <service id="App\Repository\HotelRepository" class="App\Repository\HotelRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -593,7 +592,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.dxxqB3V"/>
+      <argument type="service" id=".service_locator.qjSiE6c"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -1502,6 +1501,7 @@
       </argument>
       <argument type="collection">
         <argument>App\Form\CivilisationType</argument>
+        <argument>App\Form\HotelType</argument>
         <argument>App\Form\ProgrameType</argument>
         <argument>App\Form\ReservationHotelType</argument>
         <argument>App\Form\ReservationProgrammeType</argument>
@@ -3489,7 +3489,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.dxxqB3V"/>
+      <argument type="service" id=".service_locator.qjSiE6c"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -3975,7 +3975,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.o4xq1ee"/>
+      <argument type="service" id=".service_locator.ht7VAcG"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -5299,7 +5299,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.7_L4tuI"/>
+      <argument type="service" id=".service_locator.yKnCoUB"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -7582,6 +7582,8 @@
     <service id=".abstract.instanceof.App\Controller\SignUpController" class="App\Controller\SignUpController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CivilisationType" class="App\Form\CivilisationType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\CivilisationType" class="App\Form\CivilisationType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\HotelType" class="App\Form\HotelType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\HotelType" class="App\Form\HotelType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ProgrameType" class="App\Form\ProgrameType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ProgrameType" class="App\Form\ProgrameType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ReservationHotelType" class="App\Form\ReservationHotelType" autowire="true" abstract="true"/>
@@ -7598,8 +7600,6 @@
     <service id=".abstract.instanceof.App\Repository\CivilisationRepository" class="App\Repository\CivilisationRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\EvenementRepository" class="App\Repository\EvenementRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\EvenementRepository" class="App\Repository\EvenementRepository" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\HotelRepository" class="App\Repository\HotelRepository" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Repository\HotelRepository" class="App\Repository\HotelRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ModuleRepository" class="App\Repository\ModuleRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ModuleRepository" class="App\Repository\ModuleRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PermissionRepository" class="App\Repository\PermissionRepository" autowire="true" abstract="true"/>
@@ -8028,6 +8028,28 @@
         <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
+    <service id=".errored.w7hkBmh" class="App\Repository\HotelRepository">
+      <tag name="container.error" message="Cannot determine controller argument for &quot;App\Controller\HotelController::index()&quot;: the $hotelRepository argument is type-hinted with the non-existent class or interface: &quot;App\Repository\HotelRepository&quot;."/>
+    </service>
+    <service id=".service_locator.evaCXXu" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="hotelRepository" type="service_closure" id=".errored.w7hkBmh"/>
+      </argument>
+    </service>
+    <service id=".service_locator.5XFz.EZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="hotel" type="service_closure" id=".errored..service_locator.5XFz.EZ.App\Entity\Hotel"/>
+      </argument>
+    </service>
+    <service id=".service_locator.z2dqvKD" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="hotel" type="service_closure" id=".errored..service_locator.z2dqvKD.App\Entity\Hotel"/>
+      </argument>
+    </service>
     <service id=".service_locator..sNhEph" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -8131,7 +8153,7 @@
         <argument key="restaurantRepository" type="service_closure" id="App\Repository\RestaurantRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.dxxqB3V" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.qjSiE6c" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\CivilisationController::delete" type="service_closure" id=".service_locator.6WpbVPW"/>
@@ -8141,6 +8163,11 @@
         <argument key="App\Controller\CivilisationController::new" type="service_closure" id=".service_locator.CsMkqUa"/>
         <argument key="App\Controller\CivilisationController::show" type="service_closure" id=".service_locator.pgDvz2b"/>
         <argument key="App\Controller\CivilisationController::show_front" type="service_closure" id=".service_locator.pgDvz2b"/>
+        <argument key="App\Controller\HotelController::delete" type="service_closure" id=".service_locator.z2dqvKD"/>
+        <argument key="App\Controller\HotelController::edit" type="service_closure" id=".service_locator.z2dqvKD"/>
+        <argument key="App\Controller\HotelController::index" type="service_closure" id=".service_locator.evaCXXu"/>
+        <argument key="App\Controller\HotelController::new" type="service_closure" id=".service_locator.CsMkqUa"/>
+        <argument key="App\Controller\HotelController::show" type="service_closure" id=".service_locator.5XFz.EZ"/>
         <argument key="App\Controller\ProgrameController::delete" type="service_closure" id=".service_locator.Dt0iHVJ"/>
         <argument key="App\Controller\ProgrameController::edit" type="service_closure" id=".service_locator.Dt0iHVJ"/>
         <argument key="App\Controller\ProgrameController::index" type="service_closure" id=".service_locator..sNhEph"/>
@@ -8178,6 +8205,11 @@
         <argument key="App\Controller\CivilisationController:new" type="service_closure" id=".service_locator.CsMkqUa"/>
         <argument key="App\Controller\CivilisationController:show" type="service_closure" id=".service_locator.pgDvz2b"/>
         <argument key="App\Controller\CivilisationController:show_front" type="service_closure" id=".service_locator.pgDvz2b"/>
+        <argument key="App\Controller\HotelController:delete" type="service_closure" id=".service_locator.z2dqvKD"/>
+        <argument key="App\Controller\HotelController:edit" type="service_closure" id=".service_locator.z2dqvKD"/>
+        <argument key="App\Controller\HotelController:index" type="service_closure" id=".service_locator.evaCXXu"/>
+        <argument key="App\Controller\HotelController:new" type="service_closure" id=".service_locator.CsMkqUa"/>
+        <argument key="App\Controller\HotelController:show" type="service_closure" id=".service_locator.5XFz.EZ"/>
         <argument key="App\Controller\ProgrameController:delete" type="service_closure" id=".service_locator.Dt0iHVJ"/>
         <argument key="App\Controller\ProgrameController:edit" type="service_closure" id=".service_locator.Dt0iHVJ"/>
         <argument key="App\Controller\ProgrameController:index" type="service_closure" id=".service_locator..sNhEph"/>
@@ -8365,10 +8397,11 @@
       <argument type="service" id="argument_resolver.query_parameter_value_resolver"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.o4xq1ee" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.ht7VAcG" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\CivilisationType" type="service_closure" id="App\Form\CivilisationType"/>
+        <argument key="App\Form\HotelType" type="service_closure" id="App\Form\HotelType"/>
         <argument key="App\Form\ProgrameType" type="service_closure" id="App\Form\ProgrameType"/>
         <argument key="App\Form\ReservationHotelType" type="service_closure" id="App\Form\ReservationHotelType"/>
         <argument key="App\Form\ReservationProgrammeType" type="service_closure" id="App\Form\ReservationProgrammeType"/>
@@ -8506,14 +8539,13 @@
         <argument key="vich_uploader.listener.upload.programe_images" type="service_closure" id="vich_uploader.listener.upload.programe_images"/>
       </argument>
     </service>
-    <service id=".service_locator.7_L4tuI" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.yKnCoUB" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\BlogArticleRepository" type="service_closure" id="App\Repository\BlogArticleRepository"/>
         <argument key="App\Repository\BlogCommentRepository" type="service_closure" id="App\Repository\BlogCommentRepository"/>
         <argument key="App\Repository\CivilisationRepository" type="service_closure" id="App\Repository\CivilisationRepository"/>
         <argument key="App\Repository\EvenementRepository" type="service_closure" id="App\Repository\EvenementRepository"/>
-        <argument key="App\Repository\HotelRepository" type="service_closure" id="App\Repository\HotelRepository"/>
         <argument key="App\Repository\ModuleRepository" type="service_closure" id="App\Repository\ModuleRepository"/>
         <argument key="App\Repository\PermissionRepository" type="service_closure" id="App\Repository\PermissionRepository"/>
         <argument key="App\Repository\ProgrameRepository" type="service_closure" id="App\Repository\ProgrameRepository"/>
@@ -9309,6 +9341,12 @@
     </service>
     <service id=".errored..service_locator.6WpbVPW.App\Entity\Civilisation" class="App\Entity\Civilisation">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.6WpbVPW&quot;: it needs an instance of &quot;App\Entity\Civilisation&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.5XFz.EZ.App\Entity\Hotel" class="App\Entity\Hotel">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.5XFz.EZ&quot;: it needs an instance of &quot;App\Entity\Hotel&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.z2dqvKD.App\Entity\Hotel" class="App\Entity\Hotel">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.z2dqvKD&quot;: it needs an instance of &quot;App\Entity\Hotel&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
     </service>
     <service id=".errored..service_locator.wL7r.rR.App\Entity\Programe" class="App\Entity\Programe">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.wL7r.rR&quot;: it needs an instance of &quot;App\Entity\Programe&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
@@ -10517,7 +10555,7 @@
     <service id="Vich\UploaderBundle\Form\Type\VichImageType" alias="vich_uploader.form.type.image"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.w7.f4fT" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.dxxqB3V"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.qjSiE6c"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -10541,13 +10579,14 @@
     <service id=".service_locator.80edgLI" alias="messenger.receiver_locator"/>
     <service id=".service_locator.h8Jkkd2" alias="messenger.retry_strategy_locator"/>
     <service id=".service_locator.bJ.4HC5" alias=".service_locator.w7.f4fT"/>
+    <service id=".service_locator.5hn9gFB" alias=".service_locator.z2dqvKD"/>
     <service id=".service_locator.A7_za.Q" alias=".service_locator.Dt0iHVJ"/>
     <service id=".service_locator.BVsozo7" alias=".service_locator.rv0xkic"/>
     <service id=".service_locator.wDIOEGw" alias=".service_locator.1wfHddh"/>
     <service id=".service_locator.mJ8dGiC" alias=".service_locator.MfpZs.F"/>
-    <service id=".service_locator.YJnB.2P" alias=".service_locator.dxxqB3V"/>
+    <service id=".service_locator.uQo6Qox" alias=".service_locator.qjSiE6c"/>
     <service id=".service_locator.BFrsqsn" alias=".service_locator.F9PKc.7"/>
-    <service id=".service_locator.drX0eFL" alias=".service_locator.o4xq1ee"/>
+    <service id=".service_locator.YnsPNJo" alias=".service_locator.ht7VAcG"/>
     <service id=".service_locator.FBc_U41" alias=".service_locator.JsvzaN7"/>
     <service id=".service_locator.O24_MAy" alias=".service_locator.yY.p4P7"/>
     <service id=".service_locator.jUv.zyj" alias=".service_locator.O2p6Lk7"/>
@@ -10575,6 +10614,8 @@
     <service id=".service_locator.9e2t_lq" alias=".service_locator.CsMkqUa"/>
     <service id=".service_locator.OBfVHEZ" alias=".service_locator.pgDvz2b"/>
     <service id=".service_locator._7m5TTt" alias=".service_locator.6WpbVPW"/>
+    <service id=".service_locator.I3gZevJ" alias=".service_locator.5XFz.EZ"/>
+    <service id=".service_locator.RK0edoY" alias=".service_locator.z2dqvKD"/>
     <service id=".service_locator.mH4tboP" alias=".service_locator..sNhEph"/>
     <service id=".service_locator.lUJI3Z8" alias=".service_locator.LNwsF6h"/>
     <service id=".service_locator.RwXUfpW" alias=".service_locator.wL7r.rR"/>

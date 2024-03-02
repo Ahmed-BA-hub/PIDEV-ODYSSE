@@ -212,3 +212,17 @@ fa49d2,::1,GET,http://localhost:8000/reservation/programme/new?id=1,1709416148,,
 a73e17,::1,GET,http://localhost:8000/reservation/programme/,1709416203,,200,request
 feeb87,::1,GET,http://localhost:8000/programe/,1709416215,,200,request
 e08fc4,::1,GET,http://localhost:8000/reservation/programme/new?id=2,1709416218,,200,request
+d4f209,::1,GET,http://localhost:8000/reservation/programme/new?id=1,1709416274,,200,request
+6bb07e,::1,GET,http://localhost:8000/reservation/programme/new?id=1,1709416341,,200,request
+01e46d,::1,GET,http://localhost:8000/hotelList,1709416462,,200,request
+c965c9,::1,GET,http://localhost:8000/hotel,1709416592,65c5ee,404,request
+65c5ee,::1,GET,http://localhost:8000/hotel,1709416593,,404,request
+09dc65,::1,GET,http://localhost:8000/hotel,1709416605,06760c,404,request
+06760c,::1,GET,http://localhost:8000/hotel,1709416605,,404,request
+b03b81,::1,GET,http://localhost:8000/,1709416647,,200,request
+c3f454,::1,GET,http://localhost:8000/hotel,1709416656,bd984b,404,request
+bd984b,::1,GET,http://localhost:8000/hotel,1709416656,,404,request
+d2de95,::1,GET,http://localhost:8000/hotel,1709416699,e14d57,404,request
+e14d57,::1,GET,http://localhost:8000/hotel,1709416699,,404,request
+f0ee6e,::1,GET,http://localhost:8000/hotel/new,1709416712,658291,404,request
+658291,::1,GET,http://localhost:8000/hotel/new,1709416712,,404,request

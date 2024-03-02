@@ -94,7 +94,7 @@ class __TwigTemplate_0869dea8fa1aa9eff022378d4de6c15c extends Template
 \t\t\t\t</div>
 \t\t\t</div>
 \t\t</div>
-\t\t<!-- ======================= End Page Title ===================== -->
+\t\t<!-- ======================= End Pagee Title ===================== -->
 \t\t
 \t\t<!-- =========== Start All Hotel In Grid View =================== -->
 \t\t<section class=\"gray-bg\">
@@ -731,7 +731,7 @@ class __TwigTemplate_0869dea8fa1aa9eff022378d4de6c15c extends Template
 \t\t\t\t</div>
 \t\t\t</div>
 \t\t</div>
-\t\t<!-- ======================= End Page Title ===================== -->
+\t\t<!-- ======================= End Pagee Title ===================== -->
 \t\t
 \t\t<!-- =========== Start All Hotel In Grid View =================== -->
 \t\t<section class=\"gray-bg\">
@@ -1320,6 +1320,6 @@ class __TwigTemplate_0869dea8fa1aa9eff022378d4de6c15c extends Template
 \t\t</section>
 \t\t<!-- =========== End All Hotel In Grid View =================== -->
 {% endblock %}
-", "hotel/index.html.twig", "C:\\Users\\Racha\\Documents\\GitHub\\PIDev-Reservation\\templates\\hotel\\index.html.twig");
+", "hotel/index.html.twig", "C:\\Users\\Racha\\Documents\\GitHub\\PIDEV-ODYSSE\\templates\\hotel\\index.html.twig");
     }
 }

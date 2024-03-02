@@ -85,17 +85,14 @@ class __TwigTemplate_94e49869ef84664e135a400b749ffcc7 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Create new ReservationProgramme</h1>
+        echo "<br><br><br>
+    <h1> Reserver Programme</h1>
 
     ";
-        // line 8
+        // line 9
         echo twig_include($this->env, $context, "reservation_programme/_form.html.twig");
         echo "
 
-    <a href=\"";
-        // line 10
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation_programme_index");
-        echo "\">back to list</a>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -126,7 +123,7 @@ class __TwigTemplate_94e49869ef84664e135a400b749ffcc7 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -136,11 +133,11 @@ class __TwigTemplate_94e49869ef84664e135a400b749ffcc7 extends Template
 {% block title %}New ReservationProgramme{% endblock %}
 
 {% block body %}
-    <h1>Create new ReservationProgramme</h1>
+<br><br><br>
+    <h1> Reserver Programme</h1>
 
     {{ include('reservation_programme/_form.html.twig') }}
 
-    <a href=\"{{ path('app_reservation_programme_index') }}\">back to list</a>
 {% endblock %}
 ", "reservation_programme/new.html.twig", "C:\\Users\\Racha\\Documents\\GitHub\\PIDEV-ODYSSE\\templates\\reservation_programme\\new.html.twig");
     }
