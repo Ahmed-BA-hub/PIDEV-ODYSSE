@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\ReservationHotel;
 use App\Form\ReservationHotelType;
 use App\Repository\ReservationHotelRepository;
+use App\Repository\HotelRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -28,14 +29,17 @@ class ReservationHotelController extends AbstractController
             'reservation_hotels' => $reservationHotelRepository->findAll(),
         ]);
     }
-    #[Route('/new', name: 'app_reservation_hotel_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
+    #[Route('/new/{id}', name: 'app_reservation_hotel_new', methods: ['GET', 'POST'])]
+    public function new(Request $request, EntityManagerInterface $entityManager,$id,HotelRepository $repo): Response
     {
         $reservationHotel = new ReservationHotel();
+        $id =$request->get('id');
+        $hotel=$repo->findOneById($id);
         $form = $this->createForm(ReservationHotelType::class, $reservationHotel);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $reservationHotel->setHotel($hotel);
             $entityManager->persist($reservationHotel);
             $entityManager->flush();
 

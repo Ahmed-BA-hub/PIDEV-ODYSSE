@@ -65,7 +65,7 @@ class __TwigTemplate_0869dea8fa1aa9eff022378d4de6c15c extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Hello HotelController!";
+        echo "Hotel index";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -74,7 +74,7 @@ class __TwigTemplate_0869dea8fa1aa9eff022378d4de6c15c extends Template
 
     }
 
-    // line 5
+    // line 6
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,7 +84,7 @@ class __TwigTemplate_0869dea8fa1aa9eff022378d4de6c15c extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
+        // line 7
         echo "<!-- ======================= Start Page Title ===================== -->
 \t\t<div class=\"page-title image-title\" style=\"background-image:url(assets/img/hotel.jpg);\">
 \t\t\t<div class=\"container\">
@@ -137,8 +137,14 @@ class __TwigTemplate_0869dea8fa1aa9eff022378d4de6c15c extends Template
 \t\t\t\t<!-- /Row -->
 \t\t\t\t
 \t\t\t\t<div class=\"row\">
-\t\t\t\t\t
-\t\t\t\t\t<!-- Singl hotel List -->
+                
+                    ";
+        // line 60
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["hotels"]) || array_key_exists("hotels", $context) ? $context["hotels"] : (function () { throw new RuntimeError('Variable "hotels" does not exist.', 60, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["hotel"]) {
+            // line 61
+            echo "\t\t\t\t\t<!-- Singl hotel List -->
 \t\t\t\t\t<div class=\"col-lg-6 col-md-6\">
 \t\t\t\t\t\t<article class=\"hotel-box list-style\">
 \t\t\t\t\t\t\t<div class=\"row\">
@@ -146,459 +152,10 @@ class __TwigTemplate_0869dea8fa1aa9eff022378d4de6c15c extends Template
 \t\t\t\t\t\t\t\t<div class=\"col-md-5 col-sm-5\">
 \t\t\t\t\t\t\t\t\t<div class=\"hotel-box-image\">
 \t\t\t\t\t\t\t\t\t\t<a href=\"hotel-detail.html\">
-\t\t\t\t\t\t\t\t\t\t\t<img src=\"assets/img/hotel/hotel-1.jpg\" class=\"img-responsive hotel-box-img\" alt=\"\">
-\t\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t\t\t<div class=\"entry-bookmark\">                                   
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\"><i class=\"ti-bookmark\"></i></a>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t<h4 class=\"hotel-place\">
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Netherlands</a>
-\t\t\t\t\t\t\t\t\t\t</h4>
-\t\t\t\t\t\t\t\t\t\t<span class=\"featured-tour\"><i class=\"fa fa-star\"></i></span>
-\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t<div class=\"col-md-7 col-sm-7\">\t
-\t\t\t\t\t\t\t\t\t<div class=\"inner-box\">
-\t\t\t\t\t\t\t\t\t\t<div class=\"discount-flick\">-12%</div>
-\t\t\t\t\t\t\t\t\t\t<div class=\"box-inner-ellipsis\">
-\t\t\t\t\t\t\t\t\t\t\t<div style=\"margin: 0px; padding: 0px; border: 0px;\">
-\t\t\t\t\t\t\t\t\t\t\t\t<h3 class=\"entry-title\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"hotel-detail.html\">Antique Resort</a>
-\t\t\t\t\t\t\t\t\t\t\t\t</h3>
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"entry-content\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<p>Post A Job To Tell Us About Your Project. We'll Quickly Match You With The Right Freelancers.</p>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"price\">From <strong class=\"theme-cl\">\$254</strong> /per person</span>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t<div class=\"entry-meta\">
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-author\">
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"hotel-review entry-location\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"review-status bg-warning\"><i class=\"ti-check\"></i></span>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<h6><span class=\"cl-warning font-bold\">fair</span>1050 Review</h6>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-comment fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"view-box\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span><i class=\"ti-eye padd-r-5\"></i>782</span>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-rating fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star-half\"></i>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t</article>
-\t\t\t\t\t</div>
-\t\t\t\t\t
-\t\t\t\t\t<!-- Singl hotel List -->
-\t\t\t\t\t<div class=\"col-lg-6 col-md-6\">
-\t\t\t\t\t\t<article class=\"hotel-box list-style\">
-\t\t\t\t\t\t\t<div class=\"row\">
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t<div class=\"col-md-5 col-sm-5\">
-\t\t\t\t\t\t\t\t\t<div class=\"hotel-box-image\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"hotel-detail.html\">
-\t\t\t\t\t\t\t\t\t\t\t<img src=\"assets/img/hotel/hotel-2.jpg\" class=\"img-responsive hotel-box-img\" alt=\"\">
-\t\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t\t\t<div class=\"entry-bookmark\">                                   
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\"><i class=\"ti-bookmark\"></i></a>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t<h4 class=\"hotel-place\">
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Saudi Arabia</a>
-\t\t\t\t\t\t\t\t\t\t</h4>
-\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t<div class=\"col-md-7 col-sm-7\">\t
-\t\t\t\t\t\t\t\t\t<div class=\"inner-box\">
-\t\t\t\t\t\t\t\t\t\t<div class=\"discount-flick\">-13%</div>
-\t\t\t\t\t\t\t\t\t\t<div class=\"box-inner-ellipsis\">
-\t\t\t\t\t\t\t\t\t\t\t<div style=\"margin: 0px; padding: 0px; border: 0px;\">
-\t\t\t\t\t\t\t\t\t\t\t\t<h3 class=\"entry-title\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"hotel-detail.html\">Iceberg Resort</a>
-\t\t\t\t\t\t\t\t\t\t\t\t</h3>
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"entry-content\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<p>Post A Job To Tell Us About Your Project. We'll Quickly Match You With The Right Freelancers.</p>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"price\">From <strong class=\"theme-cl\">\$220</strong> /per person</span>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t<div class=\"entry-meta\">
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-author\">
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"hotel-review entry-location\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"review-status bg-success\"><i class=\"ti-check\"></i></span>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<h6><span class=\"cl-success font-bold\">Good</span>1062 Review</h6>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-comment fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"view-box\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span><i class=\"ti-eye padd-r-5\"></i>1782</span>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-rating fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star-half\"></i>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t</article>
-\t\t\t\t\t</div>
-\t\t\t\t\t
-\t\t\t\t\t<!-- Singl hotel List -->
-\t\t\t\t\t<div class=\"col-lg-6 col-md-6\">
-\t\t\t\t\t\t<article class=\"hotel-box list-style\">
-\t\t\t\t\t\t\t<div class=\"row\">
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t<div class=\"col-md-5 col-sm-5\">
-\t\t\t\t\t\t\t\t\t<div class=\"hotel-box-image\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"hotel-detail.html\">
-\t\t\t\t\t\t\t\t\t\t\t<img src=\"assets/img/hotel/hotel-3.jpg\" class=\"img-responsive hotel-box-img\" alt=\"\">
-\t\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t\t\t<div class=\"entry-bookmark\">                                   
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\"><i class=\"ti-bookmark\"></i></a>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t<h4 class=\"hotel-place\">
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">United States</a>
-\t\t\t\t\t\t\t\t\t\t</h4>
-\t\t\t\t\t\t\t\t\t\t<span class=\"featured-tour\"><i class=\"fa fa-star\"></i></span>
-\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t<div class=\"col-md-7 col-sm-7\">\t
-\t\t\t\t\t\t\t\t\t<div class=\"inner-box\">
-\t\t\t\t\t\t\t\t\t\t<div class=\"discount-flick\">-10%</div>
-\t\t\t\t\t\t\t\t\t\t<div class=\"box-inner-ellipsis\">
-\t\t\t\t\t\t\t\t\t\t\t<div style=\"margin: 0px; padding: 0px; border: 0px;\">
-\t\t\t\t\t\t\t\t\t\t\t\t<h3 class=\"entry-title\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"hotel-detail.html\">Vision Motel</a>
-\t\t\t\t\t\t\t\t\t\t\t\t</h3>
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"entry-content\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<p>Post A Job To Tell Us About Your Project. We'll Quickly Match You With The Right Freelancers.</p>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"price\">From <strong class=\"theme-cl\">\$424</strong> /per person</span>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t<div class=\"entry-meta\">
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-author\">
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"hotel-review entry-location\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"review-status bg-info\"><i class=\"ti-check\"></i></span>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<h6><span class=\"cl-info font-bold\">superb</span>1362 Review</h6>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-comment fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"view-box\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span><i class=\"ti-eye padd-r-5\"></i>7254</span>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-rating fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star-half\"></i>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t</article>
-\t\t\t\t\t</div>
-\t\t\t\t\t
-\t\t\t\t\t<!-- Singl hotel List -->
-\t\t\t\t\t<div class=\"col-lg-6 col-md-6\">
-\t\t\t\t\t\t<article class=\"hotel-box list-style\">
-\t\t\t\t\t\t\t<div class=\"row\">
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t<div class=\"col-md-5 col-sm-5\">
-\t\t\t\t\t\t\t\t\t<div class=\"hotel-box-image\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"hotel-detail.html\">
-\t\t\t\t\t\t\t\t\t\t\t<img src=\"assets/img/hotel/hotel-4.jpg\" class=\"img-responsive hotel-box-img\" alt=\"\">
-\t\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t\t\t<div class=\"entry-bookmark\">                                   
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\"><i class=\"ti-bookmark\"></i></a>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t<h4 class=\"hotel-place\">
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">San Marino</a>
-\t\t\t\t\t\t\t\t\t\t</h4>
-\t\t\t\t\t\t\t\t\t\t<span class=\"featured-tour\"><i class=\"fa fa-star\"></i></span>
-\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t<div class=\"col-md-7 col-sm-7\">\t
-\t\t\t\t\t\t\t\t\t<div class=\"inner-box\">
-\t\t\t\t\t\t\t\t\t\t<div class=\"discount-flick\">-12%</div>
-\t\t\t\t\t\t\t\t\t\t<div class=\"box-inner-ellipsis\">
-\t\t\t\t\t\t\t\t\t\t\t<div style=\"margin: 0px; padding: 0px; border: 0px;\">
-\t\t\t\t\t\t\t\t\t\t\t\t<h3 class=\"entry-title\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"hotel-detail.html\">Monsoon Motel</a>
-\t\t\t\t\t\t\t\t\t\t\t\t</h3>
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"entry-content\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<p>Post A Job To Tell Us About Your Project. We'll Quickly Match You With The Right Freelancers.</p>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"price\">From <strong class=\"theme-cl\">\$324</strong> /per person</span>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t<div class=\"entry-meta\">
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-author\">
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"hotel-review entry-location\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"review-status bg-danger\"><i class=\"ti-check\"></i></span>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<h6><span class=\"cl-danger font-bold\">poor</span>1240 Review</h6>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-comment fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"view-box\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span><i class=\"ti-eye padd-r-5\"></i>2412</span>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-rating fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star-half\"></i>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t</article>
-\t\t\t\t\t</div>
-\t\t\t\t\t
-\t\t\t\t\t<!-- Singl hotel List -->
-\t\t\t\t\t<div class=\"col-lg-6 col-md-6\">
-\t\t\t\t\t\t<article class=\"hotel-box list-style\">
-\t\t\t\t\t\t\t<div class=\"row\">
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t<div class=\"col-md-5 col-sm-5\">
-\t\t\t\t\t\t\t\t\t<div class=\"hotel-box-image\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"hotel-detail.html\">
-\t\t\t\t\t\t\t\t\t\t\t<img src=\"assets/img/hotel/hotel-5.jpg\" class=\"img-responsive hotel-box-img\" alt=\"\">
-\t\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t\t\t<div class=\"entry-bookmark\">                                   
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\"><i class=\"ti-bookmark\"></i></a>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t<h4 class=\"hotel-place\">
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Switzerland</a>
-\t\t\t\t\t\t\t\t\t\t</h4>
-\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t<div class=\"col-md-7 col-sm-7\">\t
-\t\t\t\t\t\t\t\t\t<div class=\"inner-box\">
-\t\t\t\t\t\t\t\t\t\t<div class=\"discount-flick\">-20%</div>
-\t\t\t\t\t\t\t\t\t\t<div class=\"box-inner-ellipsis\">
-\t\t\t\t\t\t\t\t\t\t\t<div style=\"margin: 0px; padding: 0px; border: 0px;\">
-\t\t\t\t\t\t\t\t\t\t\t\t<h3 class=\"entry-title\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"hotel-detail.html\">Comfort Motel</a>
-\t\t\t\t\t\t\t\t\t\t\t\t</h3>
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"entry-content\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<p>Post A Job To Tell Us About Your Project. We'll Quickly Match You With The Right Freelancers.</p>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"price\">From <strong class=\"theme-cl\">\$324</strong> /per person</span>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t<div class=\"entry-meta\">
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-author\">
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"hotel-review entry-location\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"review-status bg-success\"><i class=\"ti-check\"></i></span>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<h6><span class=\"cl-success font-bold\">Good</span>1300 Review</h6>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-comment fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"view-box\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span><i class=\"ti-eye padd-r-5\"></i>2541</span>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-rating fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star-half\"></i>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t</article>
-\t\t\t\t\t</div>
-\t\t\t\t\t
-\t\t\t\t\t<!-- Singl hotel List -->
-\t\t\t\t\t<div class=\"col-lg-6 col-md-6\">
-\t\t\t\t\t\t<article class=\"hotel-box list-style\">
-\t\t\t\t\t\t\t<div class=\"row\">
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t<div class=\"col-md-5 col-sm-5\">
-\t\t\t\t\t\t\t\t\t<div class=\"hotel-box-image\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"hotel-detail.html\">
-\t\t\t\t\t\t\t\t\t\t\t<img src=\"assets/img/hotel/hotel-6.jpg\" class=\"img-responsive hotel-box-img\" alt=\"\">
-\t\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t\t\t<div class=\"entry-bookmark\">                                   
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\"><i class=\"ti-bookmark\"></i></a>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t<h4 class=\"hotel-place\">
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Singapore</a>
-\t\t\t\t\t\t\t\t\t\t</h4>
-\t\t\t\t\t\t\t\t\t\t<span class=\"featured-tour\"><i class=\"fa fa-star\"></i></span>
-\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t<div class=\"col-md-7 col-sm-7\">\t
-\t\t\t\t\t\t\t\t\t<div class=\"inner-box\">
-\t\t\t\t\t\t\t\t\t\t<div class=\"discount-flick\">-11%</div>
-\t\t\t\t\t\t\t\t\t\t<div class=\"box-inner-ellipsis\">
-\t\t\t\t\t\t\t\t\t\t\t<div style=\"margin: 0px; padding: 0px; border: 0px;\">
-\t\t\t\t\t\t\t\t\t\t\t\t<h3 class=\"entry-title\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"hotel-detail.html\">Farmhouse Hotel</a>
-\t\t\t\t\t\t\t\t\t\t\t\t</h3>
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"entry-content\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<p>Post A Job To Tell Us About Your Project. We'll Quickly Match You With The Right Freelancers.</p>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"price\">From <strong class=\"theme-cl\">\$234</strong> /per person</span>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t<div class=\"entry-meta\">
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-author\">
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"hotel-review entry-location\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"review-status bg-info\"><i class=\"ti-check\"></i></span>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<h6><span class=\"cl-info font-bold\">superb</span>2541 Review</h6>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-comment fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"view-box\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span><i class=\"ti-eye padd-r-5\"></i>3215</span>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-rating fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star-half\"></i>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t</article>
-\t\t\t\t\t</div>
-\t\t\t\t\t
-\t\t\t\t\t<!-- Singl hotel List -->
-\t\t\t\t\t<div class=\"col-lg-6 col-md-6\">
-\t\t\t\t\t\t<article class=\"hotel-box list-style\">
-\t\t\t\t\t\t\t<div class=\"row\">
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t<div class=\"col-md-5 col-sm-5\">
-\t\t\t\t\t\t\t\t\t<div class=\"hotel-box-image\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"hotel-detail.html\">
-\t\t\t\t\t\t\t\t\t\t\t<img src=\"assets/img/hotel/hotel-7.jpg\" class=\"img-responsive hotel-box-img\" alt=\"\">
-\t\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t\t\t<div class=\"entry-bookmark\">                                   
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\"><i class=\"ti-bookmark\"></i></a>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t<h4 class=\"hotel-place\">
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">United Kingdom</a>
-\t\t\t\t\t\t\t\t\t\t</h4>
-\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t<div class=\"col-md-7 col-sm-7\">\t
-\t\t\t\t\t\t\t\t\t<div class=\"inner-box\">
-\t\t\t\t\t\t\t\t\t\t<div class=\"discount-flick\">-12%</div>
-\t\t\t\t\t\t\t\t\t\t<div class=\"box-inner-ellipsis\">
-\t\t\t\t\t\t\t\t\t\t\t<div style=\"margin: 0px; padding: 0px; border: 0px;\">
-\t\t\t\t\t\t\t\t\t\t\t\t<h3 class=\"entry-title\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"hotel-detail.html\">Ivory House Hotel</a>
-\t\t\t\t\t\t\t\t\t\t\t\t</h3>
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"entry-content\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<p>Post A Job To Tell Us About Your Project. We'll Quickly Match You With The Right Freelancers.</p>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"price\">From <strong class=\"theme-cl\">\$324</strong> /per person</span>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t<div class=\"entry-meta\">
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-author\">
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"hotel-review entry-location\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"review-status bg-warning\"><i class=\"ti-check\"></i></span>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<h6><span class=\"cl-warning font-bold\">fair</span>1110 Review</h6>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-comment fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"view-box\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span><i class=\"ti-eye padd-r-5\"></i>2540</span>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-rating fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star-half\"></i>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t</article>
-\t\t\t\t\t</div>
-\t\t\t\t\t
-\t\t\t\t\t<!-- Singl hotel List -->
-\t\t\t\t\t<div class=\"col-lg-6 col-md-6\">
-\t\t\t\t\t\t<article class=\"hotel-box list-style\">
-\t\t\t\t\t\t\t<div class=\"row\">
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t<div class=\"col-md-5 col-sm-5\">
-\t\t\t\t\t\t\t\t\t<div class=\"hotel-box-image\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"hotel-detail.html\">
-\t\t\t\t\t\t\t\t\t\t\t<img src=\"assets/img/hotel/hotel-8.jpg\" class=\"img-responsive hotel-box-img\" alt=\"\">
+\t\t\t\t\t\t\t\t\t\t\t<img src=\"";
+            // line 69
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/hotel/hotel-8.jpg"), "html", null, true);
+            echo "\" class=\"img-responsive hotel-box-img\" alt=\"\">
 \t\t\t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t\t\t\t<div class=\"entry-bookmark\">                                   
 \t\t\t\t\t\t\t\t\t\t\t<a href=\"#\"><i class=\"ti-bookmark\"></i></a>
@@ -616,12 +173,21 @@ class __TwigTemplate_0869dea8fa1aa9eff022378d4de6c15c extends Template
 \t\t\t\t\t\t\t\t\t\t<div class=\"box-inner-ellipsis\">
 \t\t\t\t\t\t\t\t\t\t\t<div style=\"margin: 0px; padding: 0px; border: 0px;\">
 \t\t\t\t\t\t\t\t\t\t\t\t<h3 class=\"entry-title\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"hotel-detail.html\">Prophecy Motel</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"hotel-detail.html\">";
+            // line 87
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["hotel"], "titre", [], "any", false, false, false, 87), "html", null, true);
+            echo "</a>
 \t\t\t\t\t\t\t\t\t\t\t\t</h3>
 \t\t\t\t\t\t\t\t\t\t\t\t<div class=\"entry-content\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t<p>Post A Job To Tell Us About Your Project. We'll Quickly Match You With The Right Freelancers.</p>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"price\">From <strong class=\"theme-cl\">\$224</strong> /per person</span>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t<br><br><a href=\"";
+            // line 92
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation_hotel_new", ["id" => twig_get_attribute($this->env, $this->source, $context["hotel"], "id", [], "any", false, false, false, 92)]), "html", null, true);
+            echo "\" style=\"color:green\" >Reserver</a>
+                              
+                                                </div>
+
 \t\t\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t\t
@@ -654,7 +220,13 @@ class __TwigTemplate_0869dea8fa1aa9eff022378d4de6c15c extends Template
 
 \t\t\t\t\t\t</article>
 \t\t\t\t\t</div>
-\t\t\t\t\t
+                    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['hotel'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 129
+        echo "\t\t\t\t\t
 \t\t\t\t</div>
 \t\t\t\t
 \t\t\t\t<div class=\"row\">
@@ -712,14 +284,15 @@ class __TwigTemplate_0869dea8fa1aa9eff022378d4de6c15c extends Template
      */
     public function getDebugInfo()
     {
-        return array (  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  229 => 129,  186 => 92,  178 => 87,  157 => 69,  147 => 61,  143 => 60,  88 => 7,  78 => 6,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Hello HotelController!{% endblock %}
+{% block title %}Hotel index{% endblock %}
+
 
 {% block body %}
 <!-- ======================= Start Page Title ===================== -->
@@ -774,7 +347,8 @@ class __TwigTemplate_0869dea8fa1aa9eff022378d4de6c15c extends Template
 \t\t\t\t<!-- /Row -->
 \t\t\t\t
 \t\t\t\t<div class=\"row\">
-\t\t\t\t\t
+                
+                    {% for hotel in hotels %}
 \t\t\t\t\t<!-- Singl hotel List -->
 \t\t\t\t\t<div class=\"col-lg-6 col-md-6\">
 \t\t\t\t\t\t<article class=\"hotel-box list-style\">
@@ -783,459 +357,7 @@ class __TwigTemplate_0869dea8fa1aa9eff022378d4de6c15c extends Template
 \t\t\t\t\t\t\t\t<div class=\"col-md-5 col-sm-5\">
 \t\t\t\t\t\t\t\t\t<div class=\"hotel-box-image\">
 \t\t\t\t\t\t\t\t\t\t<a href=\"hotel-detail.html\">
-\t\t\t\t\t\t\t\t\t\t\t<img src=\"assets/img/hotel/hotel-1.jpg\" class=\"img-responsive hotel-box-img\" alt=\"\">
-\t\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t\t\t<div class=\"entry-bookmark\">                                   
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\"><i class=\"ti-bookmark\"></i></a>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t<h4 class=\"hotel-place\">
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Netherlands</a>
-\t\t\t\t\t\t\t\t\t\t</h4>
-\t\t\t\t\t\t\t\t\t\t<span class=\"featured-tour\"><i class=\"fa fa-star\"></i></span>
-\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t<div class=\"col-md-7 col-sm-7\">\t
-\t\t\t\t\t\t\t\t\t<div class=\"inner-box\">
-\t\t\t\t\t\t\t\t\t\t<div class=\"discount-flick\">-12%</div>
-\t\t\t\t\t\t\t\t\t\t<div class=\"box-inner-ellipsis\">
-\t\t\t\t\t\t\t\t\t\t\t<div style=\"margin: 0px; padding: 0px; border: 0px;\">
-\t\t\t\t\t\t\t\t\t\t\t\t<h3 class=\"entry-title\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"hotel-detail.html\">Antique Resort</a>
-\t\t\t\t\t\t\t\t\t\t\t\t</h3>
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"entry-content\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<p>Post A Job To Tell Us About Your Project. We'll Quickly Match You With The Right Freelancers.</p>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"price\">From <strong class=\"theme-cl\">\$254</strong> /per person</span>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t<div class=\"entry-meta\">
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-author\">
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"hotel-review entry-location\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"review-status bg-warning\"><i class=\"ti-check\"></i></span>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<h6><span class=\"cl-warning font-bold\">fair</span>1050 Review</h6>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-comment fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"view-box\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span><i class=\"ti-eye padd-r-5\"></i>782</span>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-rating fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star-half\"></i>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t</article>
-\t\t\t\t\t</div>
-\t\t\t\t\t
-\t\t\t\t\t<!-- Singl hotel List -->
-\t\t\t\t\t<div class=\"col-lg-6 col-md-6\">
-\t\t\t\t\t\t<article class=\"hotel-box list-style\">
-\t\t\t\t\t\t\t<div class=\"row\">
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t<div class=\"col-md-5 col-sm-5\">
-\t\t\t\t\t\t\t\t\t<div class=\"hotel-box-image\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"hotel-detail.html\">
-\t\t\t\t\t\t\t\t\t\t\t<img src=\"assets/img/hotel/hotel-2.jpg\" class=\"img-responsive hotel-box-img\" alt=\"\">
-\t\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t\t\t<div class=\"entry-bookmark\">                                   
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\"><i class=\"ti-bookmark\"></i></a>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t<h4 class=\"hotel-place\">
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Saudi Arabia</a>
-\t\t\t\t\t\t\t\t\t\t</h4>
-\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t<div class=\"col-md-7 col-sm-7\">\t
-\t\t\t\t\t\t\t\t\t<div class=\"inner-box\">
-\t\t\t\t\t\t\t\t\t\t<div class=\"discount-flick\">-13%</div>
-\t\t\t\t\t\t\t\t\t\t<div class=\"box-inner-ellipsis\">
-\t\t\t\t\t\t\t\t\t\t\t<div style=\"margin: 0px; padding: 0px; border: 0px;\">
-\t\t\t\t\t\t\t\t\t\t\t\t<h3 class=\"entry-title\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"hotel-detail.html\">Iceberg Resort</a>
-\t\t\t\t\t\t\t\t\t\t\t\t</h3>
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"entry-content\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<p>Post A Job To Tell Us About Your Project. We'll Quickly Match You With The Right Freelancers.</p>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"price\">From <strong class=\"theme-cl\">\$220</strong> /per person</span>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t<div class=\"entry-meta\">
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-author\">
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"hotel-review entry-location\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"review-status bg-success\"><i class=\"ti-check\"></i></span>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<h6><span class=\"cl-success font-bold\">Good</span>1062 Review</h6>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-comment fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"view-box\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span><i class=\"ti-eye padd-r-5\"></i>1782</span>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-rating fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star-half\"></i>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t</article>
-\t\t\t\t\t</div>
-\t\t\t\t\t
-\t\t\t\t\t<!-- Singl hotel List -->
-\t\t\t\t\t<div class=\"col-lg-6 col-md-6\">
-\t\t\t\t\t\t<article class=\"hotel-box list-style\">
-\t\t\t\t\t\t\t<div class=\"row\">
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t<div class=\"col-md-5 col-sm-5\">
-\t\t\t\t\t\t\t\t\t<div class=\"hotel-box-image\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"hotel-detail.html\">
-\t\t\t\t\t\t\t\t\t\t\t<img src=\"assets/img/hotel/hotel-3.jpg\" class=\"img-responsive hotel-box-img\" alt=\"\">
-\t\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t\t\t<div class=\"entry-bookmark\">                                   
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\"><i class=\"ti-bookmark\"></i></a>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t<h4 class=\"hotel-place\">
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">United States</a>
-\t\t\t\t\t\t\t\t\t\t</h4>
-\t\t\t\t\t\t\t\t\t\t<span class=\"featured-tour\"><i class=\"fa fa-star\"></i></span>
-\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t<div class=\"col-md-7 col-sm-7\">\t
-\t\t\t\t\t\t\t\t\t<div class=\"inner-box\">
-\t\t\t\t\t\t\t\t\t\t<div class=\"discount-flick\">-10%</div>
-\t\t\t\t\t\t\t\t\t\t<div class=\"box-inner-ellipsis\">
-\t\t\t\t\t\t\t\t\t\t\t<div style=\"margin: 0px; padding: 0px; border: 0px;\">
-\t\t\t\t\t\t\t\t\t\t\t\t<h3 class=\"entry-title\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"hotel-detail.html\">Vision Motel</a>
-\t\t\t\t\t\t\t\t\t\t\t\t</h3>
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"entry-content\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<p>Post A Job To Tell Us About Your Project. We'll Quickly Match You With The Right Freelancers.</p>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"price\">From <strong class=\"theme-cl\">\$424</strong> /per person</span>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t<div class=\"entry-meta\">
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-author\">
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"hotel-review entry-location\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"review-status bg-info\"><i class=\"ti-check\"></i></span>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<h6><span class=\"cl-info font-bold\">superb</span>1362 Review</h6>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-comment fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"view-box\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span><i class=\"ti-eye padd-r-5\"></i>7254</span>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-rating fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star-half\"></i>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t</article>
-\t\t\t\t\t</div>
-\t\t\t\t\t
-\t\t\t\t\t<!-- Singl hotel List -->
-\t\t\t\t\t<div class=\"col-lg-6 col-md-6\">
-\t\t\t\t\t\t<article class=\"hotel-box list-style\">
-\t\t\t\t\t\t\t<div class=\"row\">
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t<div class=\"col-md-5 col-sm-5\">
-\t\t\t\t\t\t\t\t\t<div class=\"hotel-box-image\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"hotel-detail.html\">
-\t\t\t\t\t\t\t\t\t\t\t<img src=\"assets/img/hotel/hotel-4.jpg\" class=\"img-responsive hotel-box-img\" alt=\"\">
-\t\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t\t\t<div class=\"entry-bookmark\">                                   
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\"><i class=\"ti-bookmark\"></i></a>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t<h4 class=\"hotel-place\">
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">San Marino</a>
-\t\t\t\t\t\t\t\t\t\t</h4>
-\t\t\t\t\t\t\t\t\t\t<span class=\"featured-tour\"><i class=\"fa fa-star\"></i></span>
-\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t<div class=\"col-md-7 col-sm-7\">\t
-\t\t\t\t\t\t\t\t\t<div class=\"inner-box\">
-\t\t\t\t\t\t\t\t\t\t<div class=\"discount-flick\">-12%</div>
-\t\t\t\t\t\t\t\t\t\t<div class=\"box-inner-ellipsis\">
-\t\t\t\t\t\t\t\t\t\t\t<div style=\"margin: 0px; padding: 0px; border: 0px;\">
-\t\t\t\t\t\t\t\t\t\t\t\t<h3 class=\"entry-title\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"hotel-detail.html\">Monsoon Motel</a>
-\t\t\t\t\t\t\t\t\t\t\t\t</h3>
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"entry-content\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<p>Post A Job To Tell Us About Your Project. We'll Quickly Match You With The Right Freelancers.</p>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"price\">From <strong class=\"theme-cl\">\$324</strong> /per person</span>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t<div class=\"entry-meta\">
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-author\">
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"hotel-review entry-location\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"review-status bg-danger\"><i class=\"ti-check\"></i></span>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<h6><span class=\"cl-danger font-bold\">poor</span>1240 Review</h6>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-comment fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"view-box\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span><i class=\"ti-eye padd-r-5\"></i>2412</span>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-rating fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star-half\"></i>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t</article>
-\t\t\t\t\t</div>
-\t\t\t\t\t
-\t\t\t\t\t<!-- Singl hotel List -->
-\t\t\t\t\t<div class=\"col-lg-6 col-md-6\">
-\t\t\t\t\t\t<article class=\"hotel-box list-style\">
-\t\t\t\t\t\t\t<div class=\"row\">
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t<div class=\"col-md-5 col-sm-5\">
-\t\t\t\t\t\t\t\t\t<div class=\"hotel-box-image\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"hotel-detail.html\">
-\t\t\t\t\t\t\t\t\t\t\t<img src=\"assets/img/hotel/hotel-5.jpg\" class=\"img-responsive hotel-box-img\" alt=\"\">
-\t\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t\t\t<div class=\"entry-bookmark\">                                   
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\"><i class=\"ti-bookmark\"></i></a>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t<h4 class=\"hotel-place\">
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Switzerland</a>
-\t\t\t\t\t\t\t\t\t\t</h4>
-\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t<div class=\"col-md-7 col-sm-7\">\t
-\t\t\t\t\t\t\t\t\t<div class=\"inner-box\">
-\t\t\t\t\t\t\t\t\t\t<div class=\"discount-flick\">-20%</div>
-\t\t\t\t\t\t\t\t\t\t<div class=\"box-inner-ellipsis\">
-\t\t\t\t\t\t\t\t\t\t\t<div style=\"margin: 0px; padding: 0px; border: 0px;\">
-\t\t\t\t\t\t\t\t\t\t\t\t<h3 class=\"entry-title\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"hotel-detail.html\">Comfort Motel</a>
-\t\t\t\t\t\t\t\t\t\t\t\t</h3>
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"entry-content\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<p>Post A Job To Tell Us About Your Project. We'll Quickly Match You With The Right Freelancers.</p>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"price\">From <strong class=\"theme-cl\">\$324</strong> /per person</span>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t<div class=\"entry-meta\">
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-author\">
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"hotel-review entry-location\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"review-status bg-success\"><i class=\"ti-check\"></i></span>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<h6><span class=\"cl-success font-bold\">Good</span>1300 Review</h6>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-comment fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"view-box\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span><i class=\"ti-eye padd-r-5\"></i>2541</span>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-rating fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star-half\"></i>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t</article>
-\t\t\t\t\t</div>
-\t\t\t\t\t
-\t\t\t\t\t<!-- Singl hotel List -->
-\t\t\t\t\t<div class=\"col-lg-6 col-md-6\">
-\t\t\t\t\t\t<article class=\"hotel-box list-style\">
-\t\t\t\t\t\t\t<div class=\"row\">
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t<div class=\"col-md-5 col-sm-5\">
-\t\t\t\t\t\t\t\t\t<div class=\"hotel-box-image\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"hotel-detail.html\">
-\t\t\t\t\t\t\t\t\t\t\t<img src=\"assets/img/hotel/hotel-6.jpg\" class=\"img-responsive hotel-box-img\" alt=\"\">
-\t\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t\t\t<div class=\"entry-bookmark\">                                   
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\"><i class=\"ti-bookmark\"></i></a>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t<h4 class=\"hotel-place\">
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Singapore</a>
-\t\t\t\t\t\t\t\t\t\t</h4>
-\t\t\t\t\t\t\t\t\t\t<span class=\"featured-tour\"><i class=\"fa fa-star\"></i></span>
-\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t<div class=\"col-md-7 col-sm-7\">\t
-\t\t\t\t\t\t\t\t\t<div class=\"inner-box\">
-\t\t\t\t\t\t\t\t\t\t<div class=\"discount-flick\">-11%</div>
-\t\t\t\t\t\t\t\t\t\t<div class=\"box-inner-ellipsis\">
-\t\t\t\t\t\t\t\t\t\t\t<div style=\"margin: 0px; padding: 0px; border: 0px;\">
-\t\t\t\t\t\t\t\t\t\t\t\t<h3 class=\"entry-title\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"hotel-detail.html\">Farmhouse Hotel</a>
-\t\t\t\t\t\t\t\t\t\t\t\t</h3>
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"entry-content\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<p>Post A Job To Tell Us About Your Project. We'll Quickly Match You With The Right Freelancers.</p>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"price\">From <strong class=\"theme-cl\">\$234</strong> /per person</span>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t<div class=\"entry-meta\">
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-author\">
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"hotel-review entry-location\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"review-status bg-info\"><i class=\"ti-check\"></i></span>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<h6><span class=\"cl-info font-bold\">superb</span>2541 Review</h6>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-comment fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"view-box\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span><i class=\"ti-eye padd-r-5\"></i>3215</span>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-rating fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star-half\"></i>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t</article>
-\t\t\t\t\t</div>
-\t\t\t\t\t
-\t\t\t\t\t<!-- Singl hotel List -->
-\t\t\t\t\t<div class=\"col-lg-6 col-md-6\">
-\t\t\t\t\t\t<article class=\"hotel-box list-style\">
-\t\t\t\t\t\t\t<div class=\"row\">
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t<div class=\"col-md-5 col-sm-5\">
-\t\t\t\t\t\t\t\t\t<div class=\"hotel-box-image\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"hotel-detail.html\">
-\t\t\t\t\t\t\t\t\t\t\t<img src=\"assets/img/hotel/hotel-7.jpg\" class=\"img-responsive hotel-box-img\" alt=\"\">
-\t\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t\t\t<div class=\"entry-bookmark\">                                   
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\"><i class=\"ti-bookmark\"></i></a>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t<h4 class=\"hotel-place\">
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">United Kingdom</a>
-\t\t\t\t\t\t\t\t\t\t</h4>
-\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t<div class=\"col-md-7 col-sm-7\">\t
-\t\t\t\t\t\t\t\t\t<div class=\"inner-box\">
-\t\t\t\t\t\t\t\t\t\t<div class=\"discount-flick\">-12%</div>
-\t\t\t\t\t\t\t\t\t\t<div class=\"box-inner-ellipsis\">
-\t\t\t\t\t\t\t\t\t\t\t<div style=\"margin: 0px; padding: 0px; border: 0px;\">
-\t\t\t\t\t\t\t\t\t\t\t\t<h3 class=\"entry-title\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"hotel-detail.html\">Ivory House Hotel</a>
-\t\t\t\t\t\t\t\t\t\t\t\t</h3>
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"entry-content\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<p>Post A Job To Tell Us About Your Project. We'll Quickly Match You With The Right Freelancers.</p>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"price\">From <strong class=\"theme-cl\">\$324</strong> /per person</span>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t<div class=\"entry-meta\">
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-author\">
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"hotel-review entry-location\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"review-status bg-warning\"><i class=\"ti-check\"></i></span>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<h6><span class=\"cl-warning font-bold\">fair</span>1110 Review</h6>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-comment fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"view-box\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span><i class=\"ti-eye padd-r-5\"></i>2540</span>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"meta-item meta-rating fl-right\">
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-star-half\"></i>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t</article>
-\t\t\t\t\t</div>
-\t\t\t\t\t
-\t\t\t\t\t<!-- Singl hotel List -->
-\t\t\t\t\t<div class=\"col-lg-6 col-md-6\">
-\t\t\t\t\t\t<article class=\"hotel-box list-style\">
-\t\t\t\t\t\t\t<div class=\"row\">
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t<div class=\"col-md-5 col-sm-5\">
-\t\t\t\t\t\t\t\t\t<div class=\"hotel-box-image\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"hotel-detail.html\">
-\t\t\t\t\t\t\t\t\t\t\t<img src=\"assets/img/hotel/hotel-8.jpg\" class=\"img-responsive hotel-box-img\" alt=\"\">
+\t\t\t\t\t\t\t\t\t\t\t<img src=\"{{asset('assets/img/hotel/hotel-8.jpg')}}\" class=\"img-responsive hotel-box-img\" alt=\"\">
 \t\t\t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t\t\t\t<div class=\"entry-bookmark\">                                   
 \t\t\t\t\t\t\t\t\t\t\t<a href=\"#\"><i class=\"ti-bookmark\"></i></a>
@@ -1253,12 +375,15 @@ class __TwigTemplate_0869dea8fa1aa9eff022378d4de6c15c extends Template
 \t\t\t\t\t\t\t\t\t\t<div class=\"box-inner-ellipsis\">
 \t\t\t\t\t\t\t\t\t\t\t<div style=\"margin: 0px; padding: 0px; border: 0px;\">
 \t\t\t\t\t\t\t\t\t\t\t\t<h3 class=\"entry-title\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"hotel-detail.html\">Prophecy Motel</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"hotel-detail.html\">{{hotel.titre}}</a>
 \t\t\t\t\t\t\t\t\t\t\t\t</h3>
 \t\t\t\t\t\t\t\t\t\t\t\t<div class=\"entry-content\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t<p>Post A Job To Tell Us About Your Project. We'll Quickly Match You With The Right Freelancers.</p>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"price\">From <strong class=\"theme-cl\">\$224</strong> /per person</span>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t<br><br><a href=\"{{path('app_reservation_hotel_new',{'id':hotel.id})}}\" style=\"color:green\" >Reserver</a>
+                              
+                                                </div>
+
 \t\t\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t\t
@@ -1291,6 +416,7 @@ class __TwigTemplate_0869dea8fa1aa9eff022378d4de6c15c extends Template
 
 \t\t\t\t\t\t</article>
 \t\t\t\t\t</div>
+                    {% endfor %}
 \t\t\t\t\t
 \t\t\t\t</div>
 \t\t\t\t

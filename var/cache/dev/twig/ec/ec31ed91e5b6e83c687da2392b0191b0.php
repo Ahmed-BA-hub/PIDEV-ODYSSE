@@ -177,7 +177,7 @@ class __TwigTemplate_1b460fe7021bc38480f5ef79f843a02d extends Template
 \t\t\t\t\t\t\t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"";
         // line 109
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_hotel_list");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_hotel_index");
         echo "\">Hotel List</a>
 \t\t\t\t\t\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<li>
@@ -407,7 +407,7 @@ class __TwigTemplate_1b460fe7021bc38480f5ef79f843a02d extends Template
 \t\t\t\t\t\t\t\t\t<li><a href=\"hotel-grid.html\">Hotel Grid</a></li>
 \t\t\t\t\t\t\t\t\t<li><a href=\"";
         // line 324
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_hotel_list");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_hotel_index");
         echo "\">Hotel List</a></li>
 \t\t\t\t\t\t\t\t\t<li><a href=\"hotel-grid-sidebar.html\">Hotel Grid Sidebar</a></li>
 \t\t\t\t\t\t\t\t\t<li><a href=\"hotel-list-sidebar.html\">Hotel List Sidebar</a></li>
@@ -888,7 +888,7 @@ document.getElementById(\"rightMenu\").style.display = \"none\";
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"hotel-grid.html\">Hotel Grid</a>
 \t\t\t\t\t\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"{{path('app_hotel_list')}}\">Hotel List</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"{{path('app_hotel_index')}}\">Hotel List</a>
 \t\t\t\t\t\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"hotel-grid-sidebar.html\">Hotel Grid Sidebar</a>
@@ -1103,7 +1103,7 @@ document.getElementById(\"rightMenu\").style.display = \"none\";
 \t\t\t\t\t\t\t\t<h4>Featured Hotels</h4>
 \t\t\t\t\t\t\t\t<ul>
 \t\t\t\t\t\t\t\t\t<li><a href=\"hotel-grid.html\">Hotel Grid</a></li>
-\t\t\t\t\t\t\t\t\t<li><a href=\"{{path('app_hotel_list')}}\">Hotel List</a></li>
+\t\t\t\t\t\t\t\t\t<li><a href=\"{{path('app_hotel_index')}}\">Hotel List</a></li>
 \t\t\t\t\t\t\t\t\t<li><a href=\"hotel-grid-sidebar.html\">Hotel Grid Sidebar</a></li>
 \t\t\t\t\t\t\t\t\t<li><a href=\"hotel-list-sidebar.html\">Hotel List Sidebar</a></li>
 \t\t\t\t\t\t\t\t\t<li><a href=\"hotel-detail.html\">Hotel Detail</a></li>
@@ -1368,6 +1368,6 @@ document.getElementById(\"rightMenu\").style.display = \"none\";
 \t</body>
 
 </html>
-", "base.html.twig", "C:\\Users\\Racha\\Documents\\GitHub\\PIDev-Reservation\\templates\\base.html.twig");
+", "base.html.twig", "C:\\Users\\Racha\\Documents\\GitHub\\PIDEV-ODYSSE\\templates\\base.html.twig");
     }
 }

@@ -18,7 +18,7 @@ class ReservationHotelType extends AbstractType
     {
         $builder
             ->add('date',DateType::class,[
-                'attr' => ['class' => 'form-control' , 'placeholder' => 'Email',
+                'attr' => ['class' => 'form-control' , 'placeholder' => 'date',
                     ]
             ])
             ->add('nbpersonne',IntegerType::class,[
@@ -26,15 +26,9 @@ class ReservationHotelType extends AbstractType
                     ]
             ])
             ->add('heure',IntegerType::class,[
-                'attr' => ['class' => 'form-control' , 'placeholder' => 'Email',
+                'attr' => ['class' => 'form-control' , 'placeholder' => 'heure',
                     ]
-            ])          
-            ->add('hotel' ,EntityType::class,[
-                'class'=>Hotel::class,
-                'choice_label' => 'id',
-                'attr' => ['class' => 'form-control' 
-                    ]
-            ])
+            ])   
         ;
     }
 

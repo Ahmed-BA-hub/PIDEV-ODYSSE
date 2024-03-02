@@ -65,7 +65,7 @@ class __TwigTemplate_71ba355561dedc15900e6a43134443dd extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "New Reservation Hotel";
+        echo " Reservation Hotel";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -86,7 +86,7 @@ class __TwigTemplate_71ba355561dedc15900e6a43134443dd extends Template
 
         // line 6
         echo "<br><br><br>
-    <h1> new Reservation Hotel</h1>
+    <h1>  Reservation Hotel</h1>
 <br><br><br>
     ";
         // line 9
@@ -129,14 +129,14 @@ class __TwigTemplate_71ba355561dedc15900e6a43134443dd extends Template
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}New Reservation Hotel{% endblock %}
+{% block title %} Reservation Hotel{% endblock %}
 
 {% block body %}
 <br><br><br>
-    <h1> new Reservation Hotel</h1>
+    <h1>  Reservation Hotel</h1>
 <br><br><br>
     {{ include('reservation_hotel/_form.html.twig') }}
 {% endblock %}
-", "reservation_hotel/new.html.twig", "C:\\Users\\Racha\\Documents\\GitHub\\PIDev-Reservation\\templates\\reservation_hotel\\new.html.twig");
+", "reservation_hotel/new.html.twig", "C:\\Users\\Racha\\Documents\\GitHub\\PIDEV-ODYSSE\\templates\\reservation_hotel\\new.html.twig");
     }
 }
