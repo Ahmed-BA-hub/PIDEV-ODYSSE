@@ -1,0 +1,51 @@
+{% extends 'back.html.twig' %}
+
+
+{% block title %}Programe index{% endblock %}
+
+{% block body %}
+<link href="{{asset('assets/css/abdallah.css')}}" rel="stylesheet">
+<fieldset >
+        <br><br><br><br><br>
+    <h1 align="center">Programe List</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Duree</th>
+                <th>Date</th>
+                <th>civilisation</th>
+                <th>Images</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for programe in programes %}
+            <tr>
+                <td>{{ programe.id }}</td>
+                <td>{{ programe.nom }}</td>
+                <td>{{ programe.duree }}</td>
+                <td>{{ programe.date ? programe.date|date('Y-m-d') : '' }}</td>
+                
+                {#<td><img src="{{ asset (programe.image) }}" alt="image" width="100px" height="100px" /></td>#}
+                <td>{{programe.getCivilisationId().nom}}</td>
+                <td><img src="{{ vich_uploader_asset(programe, 'imageFile') }}" alt="Image" width="100px" height="100px"></td>
+                <td>
+                    <a href="{{ path('app_programe_show', {'id': programe.id}) }}">show</a>
+                    <a href="{{ path('app_programe_edit', {'id': programe.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <fieldset align="center"><button class="button-5" role="button" padding="50px"><a href="{{ path('app_programe_new') }}" style="color: white;">Create new</a></button></fieldset>
+    
+    <br><br><br><br><br>
+    </fieldset >
+{% endblock %} 

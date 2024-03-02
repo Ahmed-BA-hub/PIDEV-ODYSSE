@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ReservationRestaurant{% endblock %}
+
+{% block body %}
+    <h1>ReservationRestaurant</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ reservation_restaurant.id }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ reservation_restaurant.date ? reservation_restaurant.date|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Nbpersonne</th>
+                <td>{{ reservation_restaurant.nbpersonne }}</td>
+            </tr>
+            <tr>
+                <th>Heure</th>
+                <td>{{ reservation_restaurant.heure }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_reservation_restaurant_index') }}">back to list</a>
+
+    <a href="{{ path('app_reservation_restaurant_edit', {'id': reservation_restaurant.id}) }}">edit</a>
+
+    {{ include('reservation_restaurant/_delete_form.html.twig') }}
+{% endblock %}

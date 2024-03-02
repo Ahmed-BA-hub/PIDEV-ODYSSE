@@ -1,0 +1,26 @@
+{% extends 'dashboard/index.html.twig' %}
+
+
+{% block title %}Edit Programe{% endblock %}
+
+{% block body %}
+<fieldset align="center">
+<br><br><br><br><br>
+    <link href="{{asset('assets/css/abdallah.css')}}" rel="stylesheet">
+    <h1>Edit Programe</h1>
+    <table align="center">
+        <tr>
+            {{ include('programe/_form.html.twig', {'button_label': 'Update'}) }}
+            <button class="button-5" role="button"><a href="{{ path('app_programe_index_back') }}" style="color: white;">back to list</a></button>
+             {{ include('programe/_delete_form.html.twig') }}
+             
+        </tr>
+    </table>
+        <br><br><br><br><br>
+    
+
+    
+
+   
+    </fieldset>
+{% endblock %}

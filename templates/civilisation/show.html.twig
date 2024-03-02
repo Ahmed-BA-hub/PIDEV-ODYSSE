@@ -1,0 +1,54 @@
+{% extends 'dashboard/index.html.twig' %}
+
+
+{% block title %}Civilisation{% endblock %}
+
+{% block body %}
+<fieldset>
+<br><br><br><br><br>
+    <link href="{{asset('assets/css/abdallah.css')}}" rel="stylesheet">
+    <h1 align="center">Civilisation</h1>
+    <br>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ civilisation.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ civilisation.nom }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ civilisation.description }}</td>
+            </tr>
+            <tr>
+                <th>Emplacement</th>
+                <td>{{ civilisation.emplacement }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td><img src="{{ vich_uploader_asset(civilisation, 'imageFile') }}" alt="Image" width="200px" height="220px"></td>
+            </tr>
+        </tbody>
+    </table>
+    <table align="center">
+        <tr>
+            <td>    {# <a href="{{ path('app_civilisation_index') }}">back to list</a>  #}
+                    <button class="button-5" role="button"><a href="{{ path('app_civilisation_index_back') }}" style="color: white;">back to list</a></button></td>
+            <td>    {# <a href="{{ path('app_civilisation_edit', {'id': civilisation.id}) }}">edit</a> #}
+                    <button class="button-5" role="button"><a href="{{ path('app_civilisation_edit', {'id': civilisation.id}) }}" style="color: white;">edit</a></button></td>
+            <td>     {{ include('civilisation/_delete_form.html.twig') }}</td>
+        </tr>
+    </table>
+    <br><br><br><br><br>
+
+    
+
+    
+
+   
+    </fieldset>
+{% endblock %}

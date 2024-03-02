@@ -1,0 +1,22 @@
+{% extends 'dashboard/index.html.twig' %}
+
+{% block title %}New Civilisation{% endblock %}
+
+
+{% block body %}
+<fieldset align="center">
+<br><br><br><br><br>
+    <link href="{{asset('assets/css/abdallah.css')}}" rel="stylesheet">
+    <h1 align="center">Create new Civilisation</h1>
+    <br>
+    <table>
+            <tr>
+                {{ include('civilisation/_form.html.twig') }}
+    <button class="button-5" role="button"><a href="{{ path('app_civilisation_index_back') }}" style="color: white;">back to list</a></button>
+            </tr>
+        </table>
+
+    
+    <br><br><br><br><br>
+</fieldset>
+{% endblock %}

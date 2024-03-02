@@ -1,0 +1,73 @@
+
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Civilisation{% endblock %}
+
+{% block body %}
+
+<br><br><br><br><br>
+    
+    <h1 align="center">Civilisations details</h1>
+ <div class="col-lg-6 col-md-6">
+						<article class="destination-box list-style">
+							<div class="row">
+								
+								<div class="col-md-5 col-sm-5">
+									<div class="destination-box-image">
+										<a href="destination-detail.html">
+											<img src="{{ vich_uploader_asset(civilisation, 'imageFile') }}" alt="Image" width="200px" height="220px">
+										</a>
+										<a href="#" class="list-like left"><i class="ti-heart"></i></a>
+										<a href="{{ path('app_civilisation_index', {'id': civilisation.id}) }}">return</a>
+										<div class="destination-time">
+											<i class="ti ti-car"></i><span>3 days</span>
+										</div>
+									</div>
+								</div>
+							
+								<div class="col-md-7 col-sm-7">	
+									<div class="inner-box">
+										<div class="discount-flick">-22%</div>
+										<div class="box-inner-ellipsis">
+											<div style="margin: 0px; padding: 0px; border: 0px;">
+												<h3 class="entry-title">
+													<a href="destination-detail.html">{{ civilisation.nom }}</a>
+												</h3>
+												<div class="entry-content">
+													<p>{{ civilisation.description }}</p>
+													
+												</div>
+											</div>
+										</div> 
+										
+
+										<div class="entry-meta">
+											<div class="meta-item meta-author">
+												<div class="coauthors">
+													<div class="vcard author">
+														<div class="fn">
+															<h4><a href="destination-detail.html">{{ civilisation.emplacement }}</a></h4>
+														</div>
+													</div>
+												</div>
+											</div> 
+											<div class="meta-item meta-comment fl-right">
+												<i class="ti-comment-alt"></i><span>25</span>
+											</div>
+											<div class="meta-item meta-rating fl-right">
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star-half"></i>
+											</div>
+										</div> 
+									</div>
+								</div>
+							
+							</div>
+
+						</article>
+					</div>
+{% endblock %}

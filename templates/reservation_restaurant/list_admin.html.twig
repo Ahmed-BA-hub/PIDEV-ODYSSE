@@ -1,0 +1,37 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}ReservationRestaurant List{% endblock %}
+
+{% block body %}
+    <h1>ReservationRestaurant List</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Date</th>
+                <th>Nbpersonne</th>
+                <th>Heure</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for reservation_restaurant in reservation_restaurants %}
+            <tr>
+                <td>{{ reservation_restaurant.id }}</td>
+                <td>{{ reservation_restaurant.date ? reservation_restaurant.date|date('Y-m-d') : '' }}</td>
+                <td>{{ reservation_restaurant.nbpersonne }}</td>
+                <td>{{ reservation_restaurant.heure }}</td>
+                <td>
+                    <a href="{{ path('app_reservation_restaurant_show', {'id': reservation_restaurant.id}) }}">show</a>
+                    <a href="{{ path('app_reservation_restaurant_edit', {'id': reservation_restaurant.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

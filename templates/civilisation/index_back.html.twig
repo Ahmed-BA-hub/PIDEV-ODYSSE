@@ -1,0 +1,54 @@
+{% extends 'back.html.twig' %}
+
+
+
+
+{% block title %}Civilisation index{% endblock %}
+
+{% block body %}
+<link href="{{asset('assets/css/abdallah.css')}}" rel="stylesheet">
+<fieldset >
+        <br><br><br><br><br>
+        <h1 align="center">Civilisation List</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Emplacement</th>
+                <th>Image</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for civilisation in civilisations %}
+            <tr>
+                <td>{{ civilisation.id }}</td>
+                <td>{{ civilisation.nom }}</td>
+                <td>{{ civilisation.description }}</td>
+                <td>{{ civilisation.emplacement }}</td>
+                <td><img src="{{ vich_uploader_asset(civilisation, 'imageFile') }}" alt="Image" width="100px" height="100px"></td>
+              {#  <td>{{ civilisation.image }}</td> #}
+                {#<td><img src="{{ asset (civilisation.image) }}" alt="image" width="100px" height="100px" /></td>#}
+                <td>
+                    <a href="{{ path('app_civilisation_show', {'id': civilisation.id}) }}">show</a>
+                    <a href="{{ path('app_civilisation_edit', {'id': civilisation.id}) }}">edit</a>
+                </td>
+				
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <fieldset align="center"><button class="button-5" role="button"><a href="{{ path('app_civilisation_new') }}" style="color: white;">Create new</a></button></fieldset>
+    
+    <br><br><br><br><br>
+
+</fieldset>
+    
+{% endblock %}

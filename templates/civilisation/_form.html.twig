@@ -1,0 +1,60 @@
+{#{{ form_start(form ,{'attr': {'novalidate': 'novalidate'}} ) }}
+    {{ form_widget(form) }}
+    <button  class="button-5">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }} #}
+
+
+{# templates/formulaire.twig #}
+
+{# Inclure vos propres styles CSS #}
+<style>
+    /* Ajoutez vos styles CSS personnalisés ici */
+    .custom-input {
+        width: 20%; /* Largeur de 100% pour remplir la largeur du conteneur */
+    padding: 10px; /* Espacement interne autour du texte */
+    border: 1px solid #ccc; /* Bordure de 1px solide grise */
+    border-radius: 5px; /* Coins arrondis */
+    box-sizing: border-box; /* Inclure la taille de la bordure dans la largeur et la hauteur */
+    font-size: 14px; /* Taille de la police */
+    margin-bottom: 10px; /* Marge en bas pour séparer les champs */
+
+    }
+
+    .custom-textarea {
+        width: 20%; /* Largeur de 100% pour remplir la largeur du conteneur */
+    padding: 10px; /* Espacement interne autour du texte */
+    border: 1px solid #ccc; /* Bordure de 1px solide grise */
+    border-radius: 5px; /* Coins arrondis */
+    box-sizing: border-box; /* Inclure la taille de la bordure dans la largeur et la hauteur */
+    font-size: 14px; /* Taille de la police */
+    margin-bottom: 10px; /* Marge en bas pour séparer les champs */
+    }
+
+    .custom-button {
+        background-color: #4CAF50; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    padding: 10px 20px; /* Espacement interne haut/bas et gauche/droite */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur pointeur au survol */
+    font-size: 14px; /* Taille de la police */
+    margin-top: 10px; /* Marge en haut pour séparer du champ précédent */
+    }
+
+    /* Ajoutez d'autres styles personnalisés au besoin */
+
+</style>
+
+{# Afficher le formulaire #}
+{{ form_start(form ,{'attr': {'novalidate': 'novalidate'}} ) }}
+    {{ form_row(form.nom, {'attr': {'class': 'custom-input','placeholder': 'Entrez le nom'}}) }}
+    <br>
+    {{ form_row(form.description, {'attr': {'class': 'custom-textarea','placeholder': 'Entrez une description'}}) }}
+    <br>
+    {{ form_row(form.emplacement, {'attr': {'class': 'custom-input' ,'placeholder': 'Entrez un emplacement '}}) }}
+    <br>
+    
+    <br>
+    <button class="button-5">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
+

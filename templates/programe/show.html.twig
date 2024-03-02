@@ -1,0 +1,53 @@
+{% extends 'dashboard/index.html.twig' %}
+
+
+{% block title %}Programe{% endblock %}
+
+{% block body %}
+<fieldset>
+<br><br><br><br><br>
+    <link href="{{asset('assets/css/abdallah.css')}}" rel="stylesheet">
+    <h1 align="center">Programe</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ programe.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ programe.nom }}</td>
+            </tr>
+            <tr>
+                <th>Duree</th>
+                <td>{{ programe.duree }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ programe.date ? programe.date|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                
+                {# <td><img src="{{ asset (programe.image) }}" alt="image" width="100px" height="100px" /></td> #}
+            </tr>
+            <tr>
+                <th>civilisation</th>
+                <th>{{programe.getCivilisationId().nom}}</th>
+            </tr>
+        </tbody>
+    </table>
+    <table align="center">
+        <tr>
+            <td>    {# <a href="{{ path('app_programe_index') }}">back to list</a> #}
+                    <button class="button-5" role="button"><a href="{{ path('app_programe_index_back') }}" style="color: white;">back to list</a></button></td>
+            <td>    {# <a href="{{ path('app_programe_edit', {'id': programe.id}) }}">edit</a> #}
+                    <button class="button-5" role="button"><a href="{{ path('app_programe_edit', {'id': programe.id}) }}" style="color: white;">edit</a></button></td>
+            <td>    {{ include('programe/_delete_form.html.twig') }}</td>
+        </tr>
+    </table>
+    <br><br><br><br><br>
+    
+    </fieldset>
+{% endblock %}
