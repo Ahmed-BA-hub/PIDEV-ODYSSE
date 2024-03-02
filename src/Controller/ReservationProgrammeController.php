@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\ReservationProgramme;
 use App\Form\ReservationProgrammeType;
 use App\Repository\ReservationProgrammeRepository;
+use App\Repository\ProgrameRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -28,14 +29,17 @@ class ReservationProgrammeController extends AbstractController
             'reservation_programmes' => $reservationProgrammeRepository->findAll(),
         ]);
     }
-    #[Route('/new', name: 'app_reservation_programme_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
+    #[Route('/new/{id}', name: 'app_reservation_programme_new', methods: ['GET', 'POST'])]
+    public function new(Request $request, EntityManagerInterface $entityManager,ProgrameRepository $repo): Response
     {
+        $id =$request->get('id');
+        $programme=$repo->findOneById($id);
         $reservationProgramme = new ReservationProgramme();
         $form = $this->createForm(ReservationProgrammeType::class, $reservationProgramme);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $reservationProgramme->setProgramme($programme);
             $entityManager->persist($reservationProgramme);
             $entityManager->flush();
 
