@@ -26,7 +26,14 @@ class ReclamationController extends AbstractController
             'reclamations' => $reclamationRepository->findByUser($user),
         ]);
     }
-
+    #[Route('/admin', name: 'app_reclamation_admin', methods: ['GET'])]
+    public function indexAdmin(ReclamationRepository $reclamationRepository,UserRepository $repo): Response
+    {
+        $user =$repo->findOneById(4);
+        return $this->render('reclamation/index_admin.html.twig', [
+            'reclamations' => $reclamationRepository->findAll(),
+        ]);
+    }
     #[Route('/new/{idprogramme}/{idrestaurant}/{idhotel}', name: 'app_reclamation_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager,UserRepository $repoUser,ReservationProgrammeRepository $repoProgramme,ReservationHotelRepository $repoHotel,ReservationRestaurantRepository $repoRestaurant): Response
     {

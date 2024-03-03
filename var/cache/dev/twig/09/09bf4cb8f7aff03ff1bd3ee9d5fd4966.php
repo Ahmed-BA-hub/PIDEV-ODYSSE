@@ -108,7 +108,7 @@ class __TwigTemplate_386511c35419c66d3c705c55b4e3ed25 extends Template
             echo "            <tr>
                 <td>";
             // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation_programme"], "id", [], "any", false, false, false, 21), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation_programme"], "programme", [], "any", false, false, false, 21), "html", null, true);
             echo "</td>
                 <td>";
             // line 22
@@ -127,17 +127,13 @@ class __TwigTemplate_386511c35419c66d3c705c55b4e3ed25 extends Template
             // line 26
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation_programme_show", ["id" => twig_get_attribute($this->env, $this->source, $context["reservation_programme"], "id", [], "any", false, false, false, 26)]), "html", null, true);
             echo "\">show</a>
-                    <a href=\"";
-            // line 27
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation_programme_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["reservation_programme"], "id", [], "any", false, false, false, 27)]), "html", null, true);
-            echo "\">edit</a>
-                </td>
+                     </td>
             </tr>
         ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 31
+            // line 30
             echo "            <tr>
                 <td colspan=\"5\">no records found</td>
             </tr>
@@ -146,14 +142,10 @@ class __TwigTemplate_386511c35419c66d3c705c55b4e3ed25 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['reservation_programme'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 35
+        // line 34
         echo "        </tbody>
     </table>
 
-    <a href=\"";
-        // line 38
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation_programme_new");
-        echo "\">Create new</a>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -184,7 +176,7 @@ class __TwigTemplate_386511c35419c66d3c705c55b4e3ed25 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  155 => 38,  150 => 35,  141 => 31,  132 => 27,  128 => 26,  123 => 24,  119 => 23,  115 => 22,  111 => 21,  108 => 20,  103 => 19,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  146 => 34,  137 => 30,  128 => 26,  123 => 24,  119 => 23,  115 => 22,  111 => 21,  108 => 20,  103 => 19,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -209,14 +201,13 @@ class __TwigTemplate_386511c35419c66d3c705c55b4e3ed25 extends Template
         <tbody>
         {% for reservation_programme in reservation_programmes %}
             <tr>
-                <td>{{ reservation_programme.id }}</td>
+                <td>{{ reservation_programme.programme }}</td>
                 <td>{{ reservation_programme.date ? reservation_programme.date|date('Y-m-d') : '' }}</td>
                 <td>{{ reservation_programme.nbpersonne }}</td>
                 <td>{{ reservation_programme.heure }}</td>
                 <td>
                     <a href=\"{{ path('app_reservation_programme_show', {'id': reservation_programme.id}) }}\">show</a>
-                    <a href=\"{{ path('app_reservation_programme_edit', {'id': reservation_programme.id}) }}\">edit</a>
-                </td>
+                     </td>
             </tr>
         {% else %}
             <tr>
@@ -226,8 +217,7 @@ class __TwigTemplate_386511c35419c66d3c705c55b4e3ed25 extends Template
         </tbody>
     </table>
 
-    <a href=\"{{ path('app_reservation_programme_new') }}\">Create new</a>
 {% endblock %}
-", "reservation_programme/list_admin.html.twig", "C:\\Users\\Racha\\Documents\\GitHub\\PIDev-Reservation\\templates\\reservation_programme\\list_admin.html.twig");
+", "reservation_programme/list_admin.html.twig", "C:\\Users\\Racha\\Documents\\GitHub\\PIDEV-ODYSSE\\templates\\reservation_programme\\list_admin.html.twig");
     }
 }

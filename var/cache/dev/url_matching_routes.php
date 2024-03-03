@@ -28,6 +28,7 @@ return [
         '/programe/back' => [[['_route' => 'app_programe_index_back', '_controller' => 'App\\Controller\\ProgrameController::index_back'], null, ['GET' => 0], null, false, false, null]],
         '/programe/new' => [[['_route' => 'app_programe_new', '_controller' => 'App\\Controller\\ProgrameController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/reclamation' => [[['_route' => 'app_reclamation_index', '_controller' => 'App\\Controller\\ReclamationController::index'], null, ['GET' => 0], null, true, false, null]],
+        '/reclamation/admin' => [[['_route' => 'app_reclamation_admin', '_controller' => 'App\\Controller\\ReclamationController::indexAdmin'], null, ['GET' => 0], null, false, false, null]],
         '/reservation/hotel' => [[['_route' => 'app_reservation_hotel_index', '_controller' => 'App\\Controller\\ReservationHotelController::index'], null, ['GET' => 0], null, true, false, null]],
         '/reservation/hotel/admin/list' => [[['_route' => 'app_reservation_hotel_admin_list', '_controller' => 'App\\Controller\\ReservationHotelController::listadmin'], null, ['GET' => 0], null, false, false, null]],
         '/reservation/programme' => [[['_route' => 'app_reservation_programme_index', '_controller' => 'App\\Controller\\ReservationProgrammeController::index'], null, ['GET' => 0], null, true, false, null]],

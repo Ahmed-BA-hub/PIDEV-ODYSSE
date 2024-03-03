@@ -108,7 +108,7 @@ class __TwigTemplate_3296e35f5d6db328b49e2cb9059e53ba extends Template
             echo "            <tr>
                 <td>";
             // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation_restaurant"], "id", [], "any", false, false, false, 21), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation_restaurant"], "restaurant", [], "any", false, false, false, 21), "html", null, true);
             echo "</td>
                 <td>";
             // line 22
@@ -127,17 +127,13 @@ class __TwigTemplate_3296e35f5d6db328b49e2cb9059e53ba extends Template
             // line 26
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation_restaurant_show", ["id" => twig_get_attribute($this->env, $this->source, $context["reservation_restaurant"], "id", [], "any", false, false, false, 26)]), "html", null, true);
             echo "\">show</a>
-                    <a href=\"";
-            // line 27
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation_restaurant_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["reservation_restaurant"], "id", [], "any", false, false, false, 27)]), "html", null, true);
-            echo "\">edit</a>
-                </td>
+                 </td>
             </tr>
         ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 31
+            // line 30
             echo "            <tr>
                 <td colspan=\"5\">no records found</td>
             </tr>
@@ -146,7 +142,7 @@ class __TwigTemplate_3296e35f5d6db328b49e2cb9059e53ba extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['reservation_restaurant'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 35
+        // line 34
         echo "        </tbody>
     </table>
 ";
@@ -179,7 +175,7 @@ class __TwigTemplate_3296e35f5d6db328b49e2cb9059e53ba extends Template
      */
     public function getDebugInfo()
     {
-        return array (  150 => 35,  141 => 31,  132 => 27,  128 => 26,  123 => 24,  119 => 23,  115 => 22,  111 => 21,  108 => 20,  103 => 19,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  146 => 34,  137 => 30,  128 => 26,  123 => 24,  119 => 23,  115 => 22,  111 => 21,  108 => 20,  103 => 19,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -204,14 +200,13 @@ class __TwigTemplate_3296e35f5d6db328b49e2cb9059e53ba extends Template
         <tbody>
         {% for reservation_restaurant in reservation_restaurants %}
             <tr>
-                <td>{{ reservation_restaurant.id }}</td>
+                <td>{{ reservation_restaurant.restaurant }}</td>
                 <td>{{ reservation_restaurant.date ? reservation_restaurant.date|date('Y-m-d') : '' }}</td>
                 <td>{{ reservation_restaurant.nbpersonne }}</td>
                 <td>{{ reservation_restaurant.heure }}</td>
                 <td>
                     <a href=\"{{ path('app_reservation_restaurant_show', {'id': reservation_restaurant.id}) }}\">show</a>
-                    <a href=\"{{ path('app_reservation_restaurant_edit', {'id': reservation_restaurant.id}) }}\">edit</a>
-                </td>
+                 </td>
             </tr>
         {% else %}
             <tr>
@@ -221,6 +216,6 @@ class __TwigTemplate_3296e35f5d6db328b49e2cb9059e53ba extends Template
         </tbody>
     </table>
 {% endblock %}
-", "reservation_restaurant/list_admin.html.twig", "C:\\Users\\Racha\\Documents\\GitHub\\PIDev-Reservation\\templates\\reservation_restaurant\\list_admin.html.twig");
+", "reservation_restaurant/list_admin.html.twig", "C:\\Users\\Racha\\Documents\\GitHub\\PIDEV-ODYSSE\\templates\\reservation_restaurant\\list_admin.html.twig");
     }
 }

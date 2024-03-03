@@ -65,7 +65,7 @@ class __TwigTemplate_e2a6a1923752086001d2ac58adc2355c extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "ReservationHotel index";
+        echo "Reservation Hotel ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -85,7 +85,7 @@ class __TwigTemplate_e2a6a1923752086001d2ac58adc2355c extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>ReservationHotel index</h1>
+        echo "    <h1>Les Reservations Hotel </h1>
 
     <table class=\"table\">
         <thead>
@@ -108,7 +108,7 @@ class __TwigTemplate_e2a6a1923752086001d2ac58adc2355c extends Template
             echo "            <tr>
                 <td>";
             // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation_hotel"], "id", [], "any", false, false, false, 21), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation_hotel"], "hotel", [], "any", false, false, false, 21), "html", null, true);
             echo "</td>
                 <td>";
             // line 22
@@ -127,17 +127,13 @@ class __TwigTemplate_e2a6a1923752086001d2ac58adc2355c extends Template
             // line 26
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation_hotel_show", ["id" => twig_get_attribute($this->env, $this->source, $context["reservation_hotel"], "id", [], "any", false, false, false, 26)]), "html", null, true);
             echo "\">show</a>
-                    <a href=\"";
-            // line 27
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation_hotel_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["reservation_hotel"], "id", [], "any", false, false, false, 27)]), "html", null, true);
-            echo "\">edit</a>
                 </td>
             </tr>
         ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 31
+            // line 30
             echo "            <tr>
                 <td colspan=\"5\">no records found</td>
             </tr>
@@ -146,14 +142,10 @@ class __TwigTemplate_e2a6a1923752086001d2ac58adc2355c extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['reservation_hotel'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 35
+        // line 34
         echo "        </tbody>
     </table>
 
-    <a href=\"";
-        // line 38
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation_hotel_new");
-        echo "\">Create new</a>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -184,17 +176,17 @@ class __TwigTemplate_e2a6a1923752086001d2ac58adc2355c extends Template
      */
     public function getDebugInfo()
     {
-        return array (  155 => 38,  150 => 35,  141 => 31,  132 => 27,  128 => 26,  123 => 24,  119 => 23,  115 => 22,  111 => 21,  108 => 20,  103 => 19,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  146 => 34,  137 => 30,  128 => 26,  123 => 24,  119 => 23,  115 => 22,  111 => 21,  108 => 20,  103 => 19,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'back.html.twig' %}
 
-{% block title %}ReservationHotel index{% endblock %}
+{% block title %}Reservation Hotel {% endblock %}
 
 {% block body %}
-    <h1>ReservationHotel index</h1>
+    <h1>Les Reservations Hotel </h1>
 
     <table class=\"table\">
         <thead>
@@ -209,13 +201,12 @@ class __TwigTemplate_e2a6a1923752086001d2ac58adc2355c extends Template
         <tbody>
         {% for reservation_hotel in reservation_hotels %}
             <tr>
-                <td>{{ reservation_hotel.id }}</td>
+                <td>{{ reservation_hotel.hotel }}</td>
                 <td>{{ reservation_hotel.date ? reservation_hotel.date|date('Y-m-d') : '' }}</td>
                 <td>{{ reservation_hotel.nbpersonne }}</td>
                 <td>{{ reservation_hotel.heure }}</td>
                 <td>
                     <a href=\"{{ path('app_reservation_hotel_show', {'id': reservation_hotel.id}) }}\">show</a>
-                    <a href=\"{{ path('app_reservation_hotel_edit', {'id': reservation_hotel.id}) }}\">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -226,8 +217,7 @@ class __TwigTemplate_e2a6a1923752086001d2ac58adc2355c extends Template
         </tbody>
     </table>
 
-    <a href=\"{{ path('app_reservation_hotel_new') }}\">Create new</a>
 {% endblock %}
-", "reservation_hotel/list_admin.html.twig", "C:\\Users\\Racha\\Documents\\GitHub\\PIDev-Reservation\\templates\\reservation_hotel\\list_admin.html.twig");
+", "reservation_hotel/list_admin.html.twig", "C:\\Users\\Racha\\Documents\\GitHub\\PIDEV-ODYSSE\\templates\\reservation_hotel\\list_admin.html.twig");
     }
 }

@@ -126,7 +126,7 @@ class __TwigTemplate_cf8d67122b5ae424bcc9290a4624faac extends Template
 \t\t\t\t\t\t\t\t\t\t\t\t\t<li><a href=\"#\">Hotel Grid</a></li>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<li><a href=\"";
         // line 72
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_hotel_list");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_hotel_index");
         echo "\">Hotel List</a></li>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<li><a href=\"hotel-grid-sidebar.html\">Hotel Grid Sidebar</a></li>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<li><a href=\"hotel-list-sidebar.html\">Hotel List Sidebar</a></li>
@@ -238,7 +238,10 @@ class __TwigTemplate_cf8d67122b5ae424bcc9290a4624faac extends Template
 \t\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t\t<a href=\"messages.html\"><i class=\"ti-email\" aria-hidden=\"true\"></i>Messages</a>
+\t\t\t\t\t\t\t\t\t\t<a href=\"";
+        // line 177
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("app_reclamation_admin");
+        echo "\"><i class=\"ti-email\" aria-hidden=\"true\"></i>Reclamations</a>
 \t\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t<li>
@@ -773,7 +776,7 @@ class __TwigTemplate_cf8d67122b5ae424bcc9290a4624faac extends Template
      */
     public function getDebugInfo()
     {
-        return array (  738 => 392,  709 => 666,  704 => 664,  698 => 661,  694 => 660,  690 => 659,  686 => 658,  682 => 657,  678 => 656,  672 => 653,  668 => 652,  664 => 651,  660 => 650,  656 => 649,  652 => 648,  648 => 647,  644 => 646,  640 => 645,  636 => 644,  632 => 643,  628 => 642,  624 => 641,  464 => 483,  461 => 393,  458 => 392,  316 => 232,  310 => 229,  304 => 226,  285 => 210,  279 => 207,  257 => 188,  251 => 185,  228 => 165,  191 => 131,  129 => 72,  92 => 37,  67 => 16,  63 => 15,  57 => 12,  44 => 1,);
+        return array (  741 => 392,  712 => 666,  707 => 664,  701 => 661,  697 => 660,  693 => 659,  689 => 658,  685 => 657,  681 => 656,  675 => 653,  671 => 652,  667 => 651,  663 => 650,  659 => 649,  655 => 648,  651 => 647,  647 => 646,  643 => 645,  639 => 644,  635 => 643,  631 => 642,  627 => 641,  467 => 483,  464 => 393,  461 => 392,  319 => 232,  313 => 229,  307 => 226,  288 => 210,  282 => 207,  260 => 188,  254 => 185,  243 => 177,  228 => 165,  191 => 131,  129 => 72,  92 => 37,  67 => 16,  63 => 15,  57 => 12,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -849,7 +852,7 @@ class __TwigTemplate_cf8d67122b5ae424bcc9290a4624faac extends Template
 \t\t\t\t\t\t\t\t\t\t\t<div class=\"content\">
 \t\t\t\t\t\t\t\t\t\t\t\t<ul class=\"menu-col\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t<li><a href=\"#\">Hotel Grid</a></li>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<li><a href=\"{{path('app_hotel_list')}}\">Hotel List</a></li>
+\t\t\t\t\t\t\t\t\t\t\t\t\t<li><a href=\"{{path('app_hotel_index')}}\">Hotel List</a></li>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<li><a href=\"hotel-grid-sidebar.html\">Hotel Grid Sidebar</a></li>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<li><a href=\"hotel-list-sidebar.html\">Hotel List Sidebar</a></li>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<li><a href=\"hotel-detail.html\">Hotel Detail</a></li>
@@ -954,7 +957,7 @@ class __TwigTemplate_cf8d67122b5ae424bcc9290a4624faac extends Template
 \t\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t\t<a href=\"messages.html\"><i class=\"ti-email\" aria-hidden=\"true\"></i>Messages</a>
+\t\t\t\t\t\t\t\t\t\t<a href=\"{{ url('app_reclamation_admin') }}\"><i class=\"ti-email\" aria-hidden=\"true\"></i>Reclamations</a>
 \t\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t<li>
@@ -1461,6 +1464,6 @@ class __TwigTemplate_cf8d67122b5ae424bcc9290a4624faac extends Template
 \t
     </body>
 
-</html>", "back.html.twig", "C:\\Users\\Racha\\Documents\\GitHub\\PIDev-Reservation\\templates\\back.html.twig");
+</html>", "back.html.twig", "C:\\Users\\Racha\\Documents\\GitHub\\PIDEV-ODYSSE\\templates\\back.html.twig");
     }
 }
