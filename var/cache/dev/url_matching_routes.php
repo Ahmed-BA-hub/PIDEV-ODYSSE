@@ -27,6 +27,7 @@ return [
         '/programe' => [[['_route' => 'app_programe_index', '_controller' => 'App\\Controller\\ProgrameController::index'], null, ['GET' => 0], null, true, false, null]],
         '/programe/back' => [[['_route' => 'app_programe_index_back', '_controller' => 'App\\Controller\\ProgrameController::index_back'], null, ['GET' => 0], null, false, false, null]],
         '/programe/new' => [[['_route' => 'app_programe_new', '_controller' => 'App\\Controller\\ProgrameController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/reclamation' => [[['_route' => 'app_reclamation_index', '_controller' => 'App\\Controller\\ReclamationController::index'], null, ['GET' => 0], null, true, false, null]],
         '/reservation/hotel' => [[['_route' => 'app_reservation_hotel_index', '_controller' => 'App\\Controller\\ReservationHotelController::index'], null, ['GET' => 0], null, true, false, null]],
         '/reservation/hotel/admin/list' => [[['_route' => 'app_reservation_hotel_admin_list', '_controller' => 'App\\Controller\\ReservationHotelController::listadmin'], null, ['GET' => 0], null, false, false, null]],
         '/reservation/programme' => [[['_route' => 'app_reservation_programme_index', '_controller' => 'App\\Controller\\ReservationProgrammeController::index'], null, ['GET' => 0], null, true, false, null]],
@@ -77,29 +78,39 @@ return [
                         .'|(*:414)'
                     .')'
                 .')'
-                .'|/reservation/(?'
-                    .'|hotel/(?'
-                        .'|new/([^/]++)(*:461)'
+                .'|/re(?'
+                    .'|clamation/(?'
+                        .'|new/([^/]++)/([^/]++)/([^/]++)(*:473)'
                         .'|([^/]++)(?'
-                            .'|(*:480)'
-                            .'|/edit(*:493)'
-                            .'|(*:501)'
+                            .'|(*:492)'
+                            .'|/edit(*:505)'
+                            .'|(*:513)'
                         .')'
                     .')'
-                    .'|programme/(?'
-                        .'|new/([^/]++)(*:536)'
-                        .'|([^/]++)(?'
-                            .'|(*:555)'
-                            .'|/edit(*:568)'
-                            .'|(*:576)'
+                    .'|servation/(?'
+                        .'|hotel/(?'
+                            .'|new/([^/]++)(*:557)'
+                            .'|([^/]++)(?'
+                                .'|(*:576)'
+                                .'|/edit(*:589)'
+                                .'|(*:597)'
+                            .')'
                         .')'
-                    .')'
-                    .'|restaurant/(?'
-                        .'|new/([^/]++)(*:612)'
-                        .'|([^/]++)(?'
-                            .'|(*:631)'
-                            .'|/edit(*:644)'
-                            .'|(*:652)'
+                        .'|programme/(?'
+                            .'|new/([^/]++)(*:632)'
+                            .'|([^/]++)(?'
+                                .'|(*:651)'
+                                .'|/edit(*:664)'
+                                .'|(*:672)'
+                            .')'
+                        .')'
+                        .'|restaurant/(?'
+                            .'|new/([^/]++)(*:708)'
+                            .'|([^/]++)(?'
+                                .'|(*:727)'
+                                .'|/edit(*:740)'
+                                .'|(*:748)'
+                            .')'
                         .')'
                     .')'
                 .')'
@@ -125,18 +136,22 @@ return [
         382 => [[['_route' => 'app_programe_show_front', '_controller' => 'App\\Controller\\ProgrameController::show_front'], ['id'], ['GET' => 0], null, false, true, null]],
         406 => [[['_route' => 'app_programe_edit', '_controller' => 'App\\Controller\\ProgrameController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
         414 => [[['_route' => 'app_programe_delete', '_controller' => 'App\\Controller\\ProgrameController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        461 => [[['_route' => 'app_reservation_hotel_new', '_controller' => 'App\\Controller\\ReservationHotelController::new'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        480 => [[['_route' => 'app_reservation_hotel_show', '_controller' => 'App\\Controller\\ReservationHotelController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        493 => [[['_route' => 'app_reservation_hotel_edit', '_controller' => 'App\\Controller\\ReservationHotelController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        501 => [[['_route' => 'app_reservation_hotel_delete', '_controller' => 'App\\Controller\\ReservationHotelController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        536 => [[['_route' => 'app_reservation_programme_new', '_controller' => 'App\\Controller\\ReservationProgrammeController::new'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        555 => [[['_route' => 'app_reservation_programme_show', '_controller' => 'App\\Controller\\ReservationProgrammeController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        568 => [[['_route' => 'app_reservation_programme_edit', '_controller' => 'App\\Controller\\ReservationProgrammeController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        576 => [[['_route' => 'app_reservation_programme_delete', '_controller' => 'App\\Controller\\ReservationProgrammeController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        612 => [[['_route' => 'app_reservation_restaurant_new', '_controller' => 'App\\Controller\\ReservationRestaurantController::new'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        631 => [[['_route' => 'app_reservation_restaurant_show', '_controller' => 'App\\Controller\\ReservationRestaurantController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        644 => [[['_route' => 'app_reservation_restaurant_edit', '_controller' => 'App\\Controller\\ReservationRestaurantController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        652 => [
+        473 => [[['_route' => 'app_reclamation_new', '_controller' => 'App\\Controller\\ReclamationController::new'], ['idprogramme', 'idrestaurant', 'idhotel'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        492 => [[['_route' => 'app_reclamation_show', '_controller' => 'App\\Controller\\ReclamationController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        505 => [[['_route' => 'app_reclamation_edit', '_controller' => 'App\\Controller\\ReclamationController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        513 => [[['_route' => 'app_reclamation_delete', '_controller' => 'App\\Controller\\ReclamationController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        557 => [[['_route' => 'app_reservation_hotel_new', '_controller' => 'App\\Controller\\ReservationHotelController::new'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        576 => [[['_route' => 'app_reservation_hotel_show', '_controller' => 'App\\Controller\\ReservationHotelController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        589 => [[['_route' => 'app_reservation_hotel_edit', '_controller' => 'App\\Controller\\ReservationHotelController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        597 => [[['_route' => 'app_reservation_hotel_delete', '_controller' => 'App\\Controller\\ReservationHotelController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        632 => [[['_route' => 'app_reservation_programme_new', '_controller' => 'App\\Controller\\ReservationProgrammeController::new'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        651 => [[['_route' => 'app_reservation_programme_show', '_controller' => 'App\\Controller\\ReservationProgrammeController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        664 => [[['_route' => 'app_reservation_programme_edit', '_controller' => 'App\\Controller\\ReservationProgrammeController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        672 => [[['_route' => 'app_reservation_programme_delete', '_controller' => 'App\\Controller\\ReservationProgrammeController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        708 => [[['_route' => 'app_reservation_restaurant_new', '_controller' => 'App\\Controller\\ReservationRestaurantController::new'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        727 => [[['_route' => 'app_reservation_restaurant_show', '_controller' => 'App\\Controller\\ReservationRestaurantController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        740 => [[['_route' => 'app_reservation_restaurant_edit', '_controller' => 'App\\Controller\\ReservationRestaurantController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        748 => [
             [['_route' => 'app_reservation_restaurant_delete', '_controller' => 'App\\Controller\\ReservationRestaurantController::delete'], ['id'], ['POST' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

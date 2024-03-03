@@ -63,6 +63,9 @@ class User
     #[ORM\OneToMany(targetEntity: ReservationRestaurant::class, mappedBy: 'user')]
     private Collection $reservationRestaurants;
 
+    #[ORM\OneToMany(targetEntity: Reclamation::class, mappedBy: 'user')]
+    private Collection $reclamations;
+
     public function __construct()
     {
         $this->blogArticles = new ArrayCollection();
@@ -71,6 +74,7 @@ class User
         $this->reservationHotels = new ArrayCollection();
         $this->reservationProgrammes = new ArrayCollection();
         $this->reservationRestaurants = new ArrayCollection();
+        $this->reclamations = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -360,6 +364,36 @@ class User
             // set the owning side to null (unless already changed)
             if ($reservationRestaurant->getUser() === $this) {
                 $reservationRestaurant->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Reclamation>
+     */
+    public function getReclamations(): Collection
+    {
+        return $this->reclamations;
+    }
+
+    public function addReclamation(Reclamation $reclamation): static
+    {
+        if (!$this->reclamations->contains($reclamation)) {
+            $this->reclamations->add($reclamation);
+            $reclamation->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReclamation(Reclamation $reclamation): static
+    {
+        if ($this->reclamations->removeElement($reclamation)) {
+            // set the owning side to null (unless already changed)
+            if ($reclamation->getUser() === $this) {
+                $reclamation->setUser(null);
             }
         }
 

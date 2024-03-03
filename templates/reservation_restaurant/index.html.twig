@@ -25,6 +25,8 @@
                 <td>
                     <a href="{{ path('app_reservation_restaurant_show', {'id': reservation_restaurant.id}) }}">show</a>
                     <a href="{{ path('app_reservation_restaurant_edit', {'id': reservation_restaurant.id}) }}">edit</a>
+                   <a href="{{ path('app_reclamation_new', {'idrestaurant': reservation_restaurant.id,'idprogramme' : 0,'idhotel':0}) }}">Reclamer</a>
+              
                 </td>
             </tr>
         {% else %}

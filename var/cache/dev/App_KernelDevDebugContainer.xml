@@ -452,6 +452,13 @@
         <argument type="service" id=".service_locator.O2p6Lk7.App\Controller\ProgrameController"/>
       </call>
     </service>
+    <service id="App\Controller\ReclamationController" class="App\Controller\ReclamationController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.O2p6Lk7.App\Controller\ReclamationController"/>
+      </call>
+    </service>
     <service id="App\Controller\ReservationHotelController" class="App\Controller\ReservationHotelController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -494,6 +501,9 @@
       <tag name="form.type"/>
     </service>
     <service id="App\Form\ProgrameType" class="App\Form\ProgrameType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\ReclamationType" class="App\Form\ReclamationType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\ReservationHotelType" class="App\Form\ReservationHotelType" autowire="true" autoconfigure="true">
@@ -596,7 +606,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.4GNuN.L"/>
+      <argument type="service" id=".service_locator.DuRyKOW"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -1507,6 +1517,7 @@
         <argument>App\Form\CivilisationType</argument>
         <argument>App\Form\HotelType</argument>
         <argument>App\Form\ProgrameType</argument>
+        <argument>App\Form\ReclamationType</argument>
         <argument>App\Form\ReservationHotelType</argument>
         <argument>App\Form\ReservationProgrammeType</argument>
         <argument>App\Form\ReservationRestaurantType</argument>
@@ -3493,7 +3504,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.4GNuN.L"/>
+      <argument type="service" id=".service_locator.DuRyKOW"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -3979,7 +3990,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.ht7VAcG"/>
+      <argument type="service" id=".service_locator.4qlnHLP"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -7569,6 +7580,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProgrameController" class="App\Controller\ProgrameController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProgrameController" class="App\Controller\ProgrameController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ProgrameController" class="App\Controller\ProgrameController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ReclamationController" class="App\Controller\ReclamationController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ReclamationController" class="App\Controller\ReclamationController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ReclamationController" class="App\Controller\ReclamationController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ReservationHotelController" class="App\Controller\ReservationHotelController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ReservationHotelController" class="App\Controller\ReservationHotelController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ReservationHotelController" class="App\Controller\ReservationHotelController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -7590,6 +7604,8 @@
     <service id=".abstract.instanceof.App\Form\HotelType" class="App\Form\HotelType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ProgrameType" class="App\Form\ProgrameType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ProgrameType" class="App\Form\ProgrameType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ReclamationType" class="App\Form\ReclamationType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ReclamationType" class="App\Form\ReclamationType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ReservationHotelType" class="App\Form\ReservationHotelType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ReservationHotelType" class="App\Form\ReservationHotelType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ReservationProgrammeType" class="App\Form\ReservationProgrammeType" autowire="true" abstract="true"/>
@@ -8079,6 +8095,36 @@
         <argument key="programe" type="service_closure" id=".errored..service_locator.Dt0iHVJ.App\Entity\Programe"/>
       </argument>
     </service>
+    <service id=".service_locator.Cq0X0u4" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="reclamationRepository" type="service_closure" id="App\Repository\ReclamationRepository"/>
+        <argument key="repo" type="service_closure" id="App\Repository\UserRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.jfBQivK" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="repoHotel" type="service_closure" id="App\Repository\ReservationHotelRepository"/>
+        <argument key="repoProgramme" type="service_closure" id="App\Repository\ReservationProgrammeRepository"/>
+        <argument key="repoRestaurant" type="service_closure" id="App\Repository\ReservationRestaurantRepository"/>
+        <argument key="repoUser" type="service_closure" id="App\Repository\UserRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.SY0zWOw" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="reclamation" type="service_closure" id=".errored..service_locator.SY0zWOw.App\Entity\Reclamation"/>
+      </argument>
+    </service>
+    <service id=".service_locator.TQmlIbT" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="reclamation" type="service_closure" id=".errored..service_locator.TQmlIbT.App\Entity\Reclamation"/>
+      </argument>
+    </service>
     <service id=".service_locator.f9N6x9G" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -8211,7 +8257,7 @@
         <argument key="restaurantRepository" type="service_closure" id="App\Repository\RestaurantRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.4GNuN.L" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.DuRyKOW" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\CivilisationController::delete" type="service_closure" id=".service_locator.6WpbVPW"/>
@@ -8233,6 +8279,11 @@
         <argument key="App\Controller\ProgrameController::new" type="service_closure" id=".service_locator.LNwsF6h"/>
         <argument key="App\Controller\ProgrameController::show" type="service_closure" id=".service_locator.wL7r.rR"/>
         <argument key="App\Controller\ProgrameController::show_front" type="service_closure" id=".service_locator.wL7r.rR"/>
+        <argument key="App\Controller\ReclamationController::delete" type="service_closure" id=".service_locator.TQmlIbT"/>
+        <argument key="App\Controller\ReclamationController::edit" type="service_closure" id=".service_locator.TQmlIbT"/>
+        <argument key="App\Controller\ReclamationController::index" type="service_closure" id=".service_locator.Cq0X0u4"/>
+        <argument key="App\Controller\ReclamationController::new" type="service_closure" id=".service_locator.jfBQivK"/>
+        <argument key="App\Controller\ReclamationController::show" type="service_closure" id=".service_locator.SY0zWOw"/>
         <argument key="App\Controller\ReservationHotelController::delete" type="service_closure" id=".service_locator.rv0xkic"/>
         <argument key="App\Controller\ReservationHotelController::edit" type="service_closure" id=".service_locator.s2ZjAo6"/>
         <argument key="App\Controller\ReservationHotelController::index" type="service_closure" id=".service_locator.f9N6x9G"/>
@@ -8275,6 +8326,11 @@
         <argument key="App\Controller\ProgrameController:new" type="service_closure" id=".service_locator.LNwsF6h"/>
         <argument key="App\Controller\ProgrameController:show" type="service_closure" id=".service_locator.wL7r.rR"/>
         <argument key="App\Controller\ProgrameController:show_front" type="service_closure" id=".service_locator.wL7r.rR"/>
+        <argument key="App\Controller\ReclamationController:delete" type="service_closure" id=".service_locator.TQmlIbT"/>
+        <argument key="App\Controller\ReclamationController:edit" type="service_closure" id=".service_locator.TQmlIbT"/>
+        <argument key="App\Controller\ReclamationController:index" type="service_closure" id=".service_locator.Cq0X0u4"/>
+        <argument key="App\Controller\ReclamationController:new" type="service_closure" id=".service_locator.jfBQivK"/>
+        <argument key="App\Controller\ReclamationController:show" type="service_closure" id=".service_locator.SY0zWOw"/>
         <argument key="App\Controller\ReservationHotelController:delete" type="service_closure" id=".service_locator.rv0xkic"/>
         <argument key="App\Controller\ReservationHotelController:edit" type="service_closure" id=".service_locator.s2ZjAo6"/>
         <argument key="App\Controller\ReservationHotelController:index" type="service_closure" id=".service_locator.f9N6x9G"/>
@@ -8455,12 +8511,13 @@
       <argument type="service" id="argument_resolver.query_parameter_value_resolver"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.ht7VAcG" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.4qlnHLP" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\CivilisationType" type="service_closure" id="App\Form\CivilisationType"/>
         <argument key="App\Form\HotelType" type="service_closure" id="App\Form\HotelType"/>
         <argument key="App\Form\ProgrameType" type="service_closure" id="App\Form\ProgrameType"/>
+        <argument key="App\Form\ReclamationType" type="service_closure" id="App\Form\ReclamationType"/>
         <argument key="App\Form\ReservationHotelType" type="service_closure" id="App\Form\ReservationHotelType"/>
         <argument key="App\Form\ReservationProgrammeType" type="service_closure" id="App\Form\ReservationProgrammeType"/>
         <argument key="App\Form\ReservationRestaurantType" type="service_closure" id="App\Form\ReservationRestaurantType"/>
@@ -8975,6 +9032,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.O2p6Lk7" method="withContext"/>
     </service>
+    <service id=".service_locator.O2p6Lk7.App\Controller\ReclamationController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ReclamationController"/>
+      <argument>App\Controller\ReclamationController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.O2p6Lk7" method="withContext"/>
+    </service>
     <service id=".service_locator.O2p6Lk7.App\Controller\ReservationHotelController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\ReservationHotelController"/>
       <argument>App\Controller\ReservationHotelController</argument>
@@ -9186,6 +9249,7 @@
           <argument>App\Controller\HotelController</argument>
           <argument>App\Controller\LoginController</argument>
           <argument>App\Controller\ProgrameController</argument>
+          <argument>App\Controller\ReclamationController</argument>
           <argument>App\Controller\ReservationHotelController</argument>
           <argument>App\Controller\ReservationProgrammeController</argument>
           <argument>App\Controller\ReservationRestaurantController</argument>
@@ -9412,6 +9476,12 @@
     </service>
     <service id=".errored..service_locator.Dt0iHVJ.App\Entity\Programe" class="App\Entity\Programe">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.Dt0iHVJ&quot;: it needs an instance of &quot;App\Entity\Programe&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.SY0zWOw.App\Entity\Reclamation" class="App\Entity\Reclamation">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.SY0zWOw&quot;: it needs an instance of &quot;App\Entity\Reclamation&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.TQmlIbT.App\Entity\Reclamation" class="App\Entity\Reclamation">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.TQmlIbT&quot;: it needs an instance of &quot;App\Entity\Reclamation&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
     </service>
     <service id=".errored..service_locator.TxgI0Ry.App\Entity\ReservationHotel" class="App\Entity\ReservationHotel">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.TxgI0Ry&quot;: it needs an instance of &quot;App\Entity\ReservationHotel&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
@@ -10623,7 +10693,7 @@
     <service id="Vich\UploaderBundle\Form\Type\VichImageType" alias="vich_uploader.form.type.image"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.w7.f4fT" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.4GNuN.L"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.DuRyKOW"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -10649,6 +10719,8 @@
     <service id=".service_locator.bJ.4HC5" alias=".service_locator.w7.f4fT"/>
     <service id=".service_locator.5hn9gFB" alias=".service_locator.z2dqvKD"/>
     <service id=".service_locator.A7_za.Q" alias=".service_locator.Dt0iHVJ"/>
+    <service id=".service_locator.BrMGtQI" alias=".service_locator.jfBQivK"/>
+    <service id=".service_locator.uqSorVK" alias=".service_locator.TQmlIbT"/>
     <service id=".service_locator.ROwdqoA" alias=".service_locator.f9N6x9G"/>
     <service id=".service_locator.T7POSV2" alias=".service_locator.s2ZjAo6"/>
     <service id=".service_locator.BVsozo7" alias=".service_locator.rv0xkic"/>
@@ -10659,9 +10731,9 @@
     <service id=".service_locator.uIeUrOj" alias=".service_locator.IjaHlA8"/>
     <service id=".service_locator.z.6Kv_k" alias=".service_locator.XwWjNG1"/>
     <service id=".service_locator.mJ8dGiC" alias=".service_locator.MfpZs.F"/>
-    <service id=".service_locator.TwbnR_3" alias=".service_locator.4GNuN.L"/>
+    <service id=".service_locator.WznGK8f" alias=".service_locator.DuRyKOW"/>
     <service id=".service_locator.BFrsqsn" alias=".service_locator.F9PKc.7"/>
-    <service id=".service_locator.YnsPNJo" alias=".service_locator.ht7VAcG"/>
+    <service id=".service_locator.rh3XJqR" alias=".service_locator.4qlnHLP"/>
     <service id=".service_locator.FBc_U41" alias=".service_locator.JsvzaN7"/>
     <service id=".service_locator.O24_MAy" alias=".service_locator.yY.p4P7"/>
     <service id=".service_locator.jUv.zyj" alias=".service_locator.O2p6Lk7"/>
@@ -10696,6 +10768,10 @@
     <service id=".service_locator.lUJI3Z8" alias=".service_locator.LNwsF6h"/>
     <service id=".service_locator.RwXUfpW" alias=".service_locator.wL7r.rR"/>
     <service id=".service_locator.0yBC6le" alias=".service_locator.Dt0iHVJ"/>
+    <service id=".service_locator.U2ZLQqj" alias=".service_locator.Cq0X0u4"/>
+    <service id=".service_locator.6biNoUn" alias=".service_locator.jfBQivK"/>
+    <service id=".service_locator.VPTmwQj" alias=".service_locator.SY0zWOw"/>
+    <service id=".service_locator..tCyGNR" alias=".service_locator.TQmlIbT"/>
     <service id=".service_locator.6WPrpPd" alias=".service_locator.f9N6x9G"/>
     <service id=".service_locator.I961Qd0" alias=".service_locator.c5_s8a7"/>
     <service id=".service_locator.1U7yznO" alias=".service_locator.sw2rHsm"/>

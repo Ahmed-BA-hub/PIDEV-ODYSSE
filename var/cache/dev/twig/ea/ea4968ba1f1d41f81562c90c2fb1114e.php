@@ -131,13 +131,17 @@ class __TwigTemplate_50811ad214de9c7a8713e502db941228 extends Template
             // line 27
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation_hotel_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["reservation_hotel"], "id", [], "any", false, false, false, 27)]), "html", null, true);
             echo "\">edit</a>
-                </td>
+               <a href=\"";
+            // line 28
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reclamation_new", ["idprogramme" => 0, "idrestaurant" => 0, "idhotel" => twig_get_attribute($this->env, $this->source, $context["reservation_hotel"], "id", [], "any", false, false, false, 28)]), "html", null, true);
+            echo "\">Reclamer</a>
+                 </td>
             </tr>
         ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 31
+            // line 32
             echo "            <tr>
                 <td colspan=\"5\">no records found</td>
             </tr>
@@ -146,7 +150,7 @@ class __TwigTemplate_50811ad214de9c7a8713e502db941228 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['reservation_hotel'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 35
+        // line 36
         echo "        </tbody>
     </table>
 
@@ -180,7 +184,7 @@ class __TwigTemplate_50811ad214de9c7a8713e502db941228 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  150 => 35,  141 => 31,  132 => 27,  128 => 26,  123 => 24,  119 => 23,  115 => 22,  111 => 21,  108 => 20,  103 => 19,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  154 => 36,  145 => 32,  136 => 28,  132 => 27,  128 => 26,  123 => 24,  119 => 23,  115 => 22,  111 => 21,  108 => 20,  103 => 19,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -212,7 +216,8 @@ class __TwigTemplate_50811ad214de9c7a8713e502db941228 extends Template
                 <td>
                     <a href=\"{{ path('app_reservation_hotel_show', {'id': reservation_hotel.id}) }}\">show</a>
                     <a href=\"{{ path('app_reservation_hotel_edit', {'id': reservation_hotel.id}) }}\">edit</a>
-                </td>
+               <a href=\"{{ path('app_reclamation_new', {'idprogramme': 0,'idrestaurant':0,'idhotel':reservation_hotel.id}) }}\">Reclamer</a>
+                 </td>
             </tr>
         {% else %}
             <tr>

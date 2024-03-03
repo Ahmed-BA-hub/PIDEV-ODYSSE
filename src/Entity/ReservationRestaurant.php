@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ReservationRestaurantRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -28,6 +30,14 @@ class ReservationRestaurant
 
     #[ORM\ManyToOne(inversedBy: 'reservationRestaurants')]
     private ?User $user = null;
+
+    #[ORM\OneToMany(targetEntity: Reclamation::class, mappedBy: 'ReservationRestaurant')]
+    private Collection $reclamations;
+
+    public function __construct()
+    {
+        $this->reclamations = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -90,6 +100,36 @@ class ReservationRestaurant
     public function setUser(?User $user): static
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Reclamation>
+     */
+    public function getReclamations(): Collection
+    {
+        return $this->reclamations;
+    }
+
+    public function addReclamation(Reclamation $reclamation): static
+    {
+        if (!$this->reclamations->contains($reclamation)) {
+            $this->reclamations->add($reclamation);
+            $reclamation->setReservationRestaurant($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReclamation(Reclamation $reclamation): static
+    {
+        if ($this->reclamations->removeElement($reclamation)) {
+            // set the owning side to null (unless already changed)
+            if ($reclamation->getReservationRestaurant() === $this) {
+                $reclamation->setReservationRestaurant(null);
+            }
+        }
 
         return $this;
     }

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ReservationProgrammeRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -28,6 +30,14 @@ class ReservationProgramme
 
     #[ORM\ManyToOne(inversedBy: 'reservationProgrammes')]
     private ?User $user = null;
+
+    #[ORM\OneToMany(targetEntity: Reclamation::class, mappedBy: 'reservationProgramme')]
+    private Collection $reclamations;
+
+    public function __construct()
+    {
+        $this->reclamations = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -93,4 +103,34 @@ class ReservationProgramme
 
         return $this;
     }
+
+    /**
+     * @return Collection<int, Reclamation>
+     */
+    public function getReclamations(): Collection
+    {
+        return $this->reclamations;
+    }
+
+    public function addReclamation(Reclamation $reclamation): static
+    {
+        if (!$this->reclamations->contains($reclamation)) {
+            $this->reclamations->add($reclamation);
+            $reclamation->setReservationProgramme($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReclamation(Reclamation $reclamation): static
+    {
+        if ($this->reclamations->removeElement($reclamation)) {
+            // set the owning side to null (unless already changed)
+            if ($reclamation->getReservationProgramme() === $this) {
+                $reclamation->setReservationProgramme(null);
+            }
+        }
+
+        return $this;
+    } 
 }
