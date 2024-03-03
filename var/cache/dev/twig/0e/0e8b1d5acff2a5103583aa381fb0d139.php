@@ -150,10 +150,6 @@ class __TwigTemplate_5adc139a4681e626228cc49b5f196125 extends Template
         echo "        </tbody>
     </table>
 
-    <a href=\"";
-        // line 38
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation_restaurant_new");
-        echo "\">Create new</a>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -184,7 +180,7 @@ class __TwigTemplate_5adc139a4681e626228cc49b5f196125 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  155 => 38,  150 => 35,  141 => 31,  132 => 27,  128 => 26,  123 => 24,  119 => 23,  115 => 22,  111 => 21,  108 => 20,  103 => 19,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  150 => 35,  141 => 31,  132 => 27,  128 => 26,  123 => 24,  119 => 23,  115 => 22,  111 => 21,  108 => 20,  103 => 19,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -226,8 +222,7 @@ class __TwigTemplate_5adc139a4681e626228cc49b5f196125 extends Template
         </tbody>
     </table>
 
-    <a href=\"{{ path('app_reservation_restaurant_new') }}\">Create new</a>
 {% endblock %}
-", "reservation_restaurant/index.html.twig", "C:\\Users\\Racha\\Documents\\GitHub\\PIDev-Reservation\\templates\\reservation_restaurant\\index.html.twig");
+", "reservation_restaurant/index.html.twig", "C:\\Users\\Racha\\Documents\\GitHub\\PIDEV-ODYSSE\\templates\\reservation_restaurant\\index.html.twig");
     }
 }

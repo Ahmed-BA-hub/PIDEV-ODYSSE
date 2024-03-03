@@ -6,6 +6,7 @@ use App\Entity\ReservationRestaurant;
 use App\Form\ReservationRestaurantType;
 use App\Repository\ReservationRestaurantRepository;
 use App\Repository\RestaurantRepository;
+use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,10 +17,11 @@ use Symfony\Component\Routing\Attribute\Route;
 class ReservationRestaurantController extends AbstractController
 {
     #[Route('/', name: 'app_reservation_restaurant_index', methods: ['GET'])]
-    public function index(ReservationRestaurantRepository $reservationRestaurantRepository): Response
+    public function index(ReservationRestaurantRepository $reservationRestaurantRepository,UserRepository $repo): Response
     {
+        $user=$repo->findOneById(4);
         return $this->render('reservation_restaurant/index.html.twig', [
-            'reservation_restaurants' => $reservationRestaurantRepository->findAll(),
+            'reservation_restaurants' => $reservationRestaurantRepository->findByUser($user),
         ]);
     }
     #[Route('/admin/list', name: 'app_reservation_restaurant_list_admin', methods: ['GET'])]
@@ -30,18 +32,20 @@ class ReservationRestaurantController extends AbstractController
         ]);
     }
     #[Route('/new/{id}', name: 'app_reservation_restaurant_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager,$id,RestaurantRepository $restaurantRepository): Response
+    public function new(Request $request, EntityManagerInterface $entityManager,$id,RestaurantRepository $restaurantRepository,UserRepository $repoUser): Response
     {
         $reservationRestaurant = new ReservationRestaurant();
         $form = $this->createForm(ReservationRestaurantType::class, $reservationRestaurant);
         $form->handleRequest($request);
-        $restaurant = $restaurantRepository->findOneById($id);
+        $restaurant = $restaurantRepository->findOneById($id);   
+        $user=$repoUser->findOneById(4);
         if ($form->isSubmitted() && $form->isValid()) {
             $reservationRestaurant->setRestaurant($restaurant);
+            $reservationRestaurant->setUser($user);
             $entityManager->persist($reservationRestaurant);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_restaurant_list', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_reservation_restaurant_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('reservation_restaurant/new.html.twig', [
@@ -59,12 +63,14 @@ class ReservationRestaurantController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'app_reservation_restaurant_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, ReservationRestaurant $reservationRestaurant, EntityManagerInterface $entityManager): Response
+    public function edit(Request $request, ReservationRestaurant $reservationRestaurant, EntityManagerInterface $entityManager,UserRepository $repoUser): Response
     {
+        $user=$repoUser->findOneById(4);
         $form = $this->createForm(ReservationRestaurantType::class, $reservationRestaurant);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $reservationRestaurant->setUser($user);
             $entityManager->flush();
 
             return $this->redirectToRoute('app_reservation_restaurant_index', [], Response::HTTP_SEE_OTHER);

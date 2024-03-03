@@ -54,11 +54,23 @@ class User
     #[ORM\OneToMany(targetEntity: Resrvation::class, mappedBy: 'users')]
     private Collection $resrvations;
 
+    #[ORM\OneToMany(targetEntity: ReservationHotel::class, mappedBy: 'user')]
+    private Collection $reservationHotels;
+
+    #[ORM\OneToMany(targetEntity: ReservationProgramme::class, mappedBy: 'user')]
+    private Collection $reservationProgrammes;
+
+    #[ORM\OneToMany(targetEntity: ReservationRestaurant::class, mappedBy: 'user')]
+    private Collection $reservationRestaurants;
+
     public function __construct()
     {
         $this->blogArticles = new ArrayCollection();
         $this->blogComments = new ArrayCollection();
         $this->resrvations = new ArrayCollection();
+        $this->reservationHotels = new ArrayCollection();
+        $this->reservationProgrammes = new ArrayCollection();
+        $this->reservationRestaurants = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -258,6 +270,96 @@ class User
             // set the owning side to null (unless already changed)
             if ($resrvation->getUsers() === $this) {
                 $resrvation->setUsers(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, ReservationHotel>
+     */
+    public function getReservationHotels(): Collection
+    {
+        return $this->reservationHotels;
+    }
+
+    public function addReservationHotel(ReservationHotel $reservationHotel): static
+    {
+        if (!$this->reservationHotels->contains($reservationHotel)) {
+            $this->reservationHotels->add($reservationHotel);
+            $reservationHotel->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReservationHotel(ReservationHotel $reservationHotel): static
+    {
+        if ($this->reservationHotels->removeElement($reservationHotel)) {
+            // set the owning side to null (unless already changed)
+            if ($reservationHotel->getUser() === $this) {
+                $reservationHotel->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, ReservationProgramme>
+     */
+    public function getReservationProgrammes(): Collection
+    {
+        return $this->reservationProgrammes;
+    }
+
+    public function addReservationProgramme(ReservationProgramme $reservationProgramme): static
+    {
+        if (!$this->reservationProgrammes->contains($reservationProgramme)) {
+            $this->reservationProgrammes->add($reservationProgramme);
+            $reservationProgramme->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReservationProgramme(ReservationProgramme $reservationProgramme): static
+    {
+        if ($this->reservationProgrammes->removeElement($reservationProgramme)) {
+            // set the owning side to null (unless already changed)
+            if ($reservationProgramme->getUser() === $this) {
+                $reservationProgramme->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, ReservationRestaurant>
+     */
+    public function getReservationRestaurants(): Collection
+    {
+        return $this->reservationRestaurants;
+    }
+
+    public function addReservationRestaurant(ReservationRestaurant $reservationRestaurant): static
+    {
+        if (!$this->reservationRestaurants->contains($reservationRestaurant)) {
+            $this->reservationRestaurants->add($reservationRestaurant);
+            $reservationRestaurant->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReservationRestaurant(ReservationRestaurant $reservationRestaurant): static
+    {
+        if ($this->reservationRestaurants->removeElement($reservationRestaurant)) {
+            // set the owning side to null (unless already changed)
+            if ($reservationRestaurant->getUser() === $this) {
+                $reservationRestaurant->setUser(null);
             }
         }
 

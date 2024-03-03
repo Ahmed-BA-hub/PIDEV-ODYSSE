@@ -18,7 +18,7 @@
         <tbody>
         {% for reservation_programme in reservation_programmes %}
             <tr>
-                <td>{{ reservation_programme.id }}</td>
+              <td>{{ reservation_programme.programme }}</td>
                 <td>{{ reservation_programme.date ? reservation_programme.date|date('Y-m-d') : '' }}</td>
                 <td>{{ reservation_programme.nbpersonne }}</td>
                 <td>{{ reservation_programme.heure }}</td>
@@ -26,6 +26,7 @@
                     <a href="{{ path('app_reservation_programme_show', {'id': reservation_programme.id}) }}">show</a>
                     <a href="{{ path('app_reservation_programme_edit', {'id': reservation_programme.id}) }}">edit</a>
                 </td>
+
             </tr>
         {% else %}
             <tr>

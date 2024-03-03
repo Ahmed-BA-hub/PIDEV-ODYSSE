@@ -6,6 +6,7 @@ use App\Entity\ReservationProgramme;
 use App\Form\ReservationProgrammeType;
 use App\Repository\ReservationProgrammeRepository;
 use App\Repository\ProgrameRepository;
+use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,29 +17,33 @@ use Symfony\Component\Routing\Attribute\Route;
 class ReservationProgrammeController extends AbstractController
 {
     #[Route('/', name: 'app_reservation_programme_index', methods: ['GET'])]
-    public function index(ReservationProgrammeRepository $reservationProgrammeRepository): Response
+    public function index(ReservationProgrammeRepository $reservationProgrammeRepository,UserRepository $repo): Response
     {
+        $user=$repo->findOneById(4);
         return $this->render('reservation_programme/index.html.twig', [
-            'reservation_programmes' => $reservationProgrammeRepository->findAll(),
+            'reservation_programmes' => $reservationProgrammeRepository->findByUser($user),
         ]);
     }
     #[Route('/admin/list', name: 'app_reservation_programme_list_admin', methods: ['GET'])]
     public function listAdmin(ReservationProgrammeRepository $reservationProgrammeRepository): Response
     {
+       
         return $this->render('reservation_programme/list_admin.html.twig', [
             'reservation_programmes' => $reservationProgrammeRepository->findAll(),
         ]);
     }
     #[Route('/new/{id}', name: 'app_reservation_programme_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager,ProgrameRepository $repo): Response
+    public function new(Request $request, EntityManagerInterface $entityManager,ProgrameRepository $repo,UserRepository $repoUser): Response
     {
         $id =$request->get('id');
-        $programme=$repo->findOneById($id);
+        $programme=$repo->findOneById($id);        
+        $user=$repoUser->findOneById(4);
         $reservationProgramme = new ReservationProgramme();
         $form = $this->createForm(ReservationProgrammeType::class, $reservationProgramme);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $reservationProgramme->setUser($user);
             $reservationProgramme->setProgramme($programme);
             $entityManager->persist($reservationProgramme);
             $entityManager->flush();
@@ -61,12 +66,14 @@ class ReservationProgrammeController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'app_reservation_programme_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, ReservationProgramme $reservationProgramme, EntityManagerInterface $entityManager): Response
-    {
+    public function edit(Request $request, ReservationProgramme $reservationProgramme, EntityManagerInterface $entityManager,UserRepository $repoUser): Response
+    {     
+        $user=$repoUser->findOneById(4);
         $form = $this->createForm(ReservationProgrammeType::class, $reservationProgramme);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $reservationProgramme->setUser($user);
             $entityManager->flush();
 
             return $this->redirectToRoute('app_reservation_programme_index', [], Response::HTTP_SEE_OTHER);
