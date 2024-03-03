@@ -85,15 +85,16 @@ class __TwigTemplate_bb882ec5c096e8b6e2724bf2a23a4e6f extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Create new Reclamation</h1>
+        echo "<br><br><br>
+    <h1>Faire une  Reclamation</h1>
 
     ";
-        // line 8
+        // line 9
         echo twig_include($this->env, $context, "reclamation/_form.html.twig");
         echo "
 
     <a href=\"";
-        // line 10
+        // line 11
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reclamation_index");
         echo "\">back to list</a>
 ";
@@ -126,7 +127,7 @@ class __TwigTemplate_bb882ec5c096e8b6e2724bf2a23a4e6f extends Template
      */
     public function getDebugInfo()
     {
-        return array (  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  98 => 11,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -136,7 +137,8 @@ class __TwigTemplate_bb882ec5c096e8b6e2724bf2a23a4e6f extends Template
 {% block title %}New Reclamation{% endblock %}
 
 {% block body %}
-    <h1>Create new Reclamation</h1>
+<br><br><br>
+    <h1>Faire une  Reclamation</h1>
 
     {{ include('reclamation/_form.html.twig') }}
 
