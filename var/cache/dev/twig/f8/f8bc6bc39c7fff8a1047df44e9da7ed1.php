@@ -85,9 +85,44 @@ class __TwigTemplate_3296e35f5d6db328b49e2cb9059e53ba extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>ReservationRestaurant List</h1>
+        echo "<script>
+document.getElementById('search-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Empêcher la soumission du formulaire par défaut
 
-    <table class=\"table\">
+    var date = document.getElementById('date-input').value; // Récupérer la date saisie dans le champ de recherche
+    var restaurantName = document.getElementById('restaurant-name-input').value; // Récupérer le nom du restaurant saisi
+
+    // Envoyer la requête AJAX avec la date saisie et le nom du restaurant
+    fetch('/reservations/search?date=' + date + '&restaurantName=' + restaurantName)
+        .then(response => response.json())
+        .then(data => {
+            // Mettre à jour le contenu du tableau HTML avec les résultats de la recherche
+            var tableBody = document.getElementById('reservation-table-body');
+            tableBody.innerHTML = ''; // Effacer le contenu actuel du tableau
+
+            // Ajouter chaque réservation correspondant à la date saisie dans le tableau
+            data.forEach(function(reservation) {
+                var row = '<tr>';
+                row += '<td>' + reservation.id + '</td>'; // Modifier avec les propriétés de la réservation
+                row += '<td>' + reservation.date + '</td>'; // Modifier avec les propriétés de la réservation
+                row += '<td>' + reservation.nbpersonne + '</td>'; // Modifier avec les propriétés de la réservation
+                row += '<td>' + reservation.heure + '</td>'; // Modifier avec les propriétés de la réservation
+                row += '</tr>';
+                tableBody.innerHTML += row; // Ajouter la ligne au tableau
+            });
+        })
+        .catch(error => console.error('Error:', error));
+});
+
+</script>
+
+    <h1>Reservation Restaurant </h1>
+<form id=\"search-form\" action=\"/reservation/restaurant/admin/list\" method=\"GET\">
+    <input type=\"date\" id=\"date-input\" name=\"date\">
+    <input type=\"text\" id=\"restaurant-name-input\" name=\"restaurantName\">
+    <button type=\"submit\">Rechercher</button>
+</form>
+    <table class=\"table\" id=\"reservation-table-body\">
         <thead>
             <tr>
                 <th></th>
@@ -99,33 +134,33 @@ class __TwigTemplate_3296e35f5d6db328b49e2cb9059e53ba extends Template
         </thead>
         <tbody>
         ";
-        // line 19
+        // line 54
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["reservation_restaurants"]) || array_key_exists("reservation_restaurants", $context) ? $context["reservation_restaurants"] : (function () { throw new RuntimeError('Variable "reservation_restaurants" does not exist.', 19, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["reservation_restaurants"]) || array_key_exists("reservation_restaurants", $context) ? $context["reservation_restaurants"] : (function () { throw new RuntimeError('Variable "reservation_restaurants" does not exist.', 54, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["reservation_restaurant"]) {
-            // line 20
+            // line 55
             echo "            <tr>
                 <td>";
-            // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation_restaurant"], "restaurant", [], "any", false, false, false, 21), "html", null, true);
+            // line 56
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation_restaurant"], "restaurant", [], "any", false, false, false, 56), "html", null, true);
             echo "</td>
                 <td>";
-            // line 22
-            ((twig_get_attribute($this->env, $this->source, $context["reservation_restaurant"], "date", [], "any", false, false, false, 22)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation_restaurant"], "date", [], "any", false, false, false, 22), "Y-m-d"), "html", null, true))) : (print ("")));
+            // line 57
+            ((twig_get_attribute($this->env, $this->source, $context["reservation_restaurant"], "date", [], "any", false, false, false, 57)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation_restaurant"], "date", [], "any", false, false, false, 57), "Y-m-d"), "html", null, true))) : (print ("")));
             echo "</td>
                 <td>";
-            // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation_restaurant"], "nbpersonne", [], "any", false, false, false, 23), "html", null, true);
+            // line 58
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation_restaurant"], "nbpersonne", [], "any", false, false, false, 58), "html", null, true);
             echo "</td>
                 <td>";
-            // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation_restaurant"], "heure", [], "any", false, false, false, 24), "html", null, true);
+            // line 59
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation_restaurant"], "heure", [], "any", false, false, false, 59), "html", null, true);
             echo "</td>
                 <td>
                     <a href=\"";
-            // line 26
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation_restaurant_show", ["id" => twig_get_attribute($this->env, $this->source, $context["reservation_restaurant"], "id", [], "any", false, false, false, 26)]), "html", null, true);
+            // line 61
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation_restaurant_show", ["id" => twig_get_attribute($this->env, $this->source, $context["reservation_restaurant"], "id", [], "any", false, false, false, 61)]), "html", null, true);
             echo "\">show</a>
                  </td>
             </tr>
@@ -133,7 +168,7 @@ class __TwigTemplate_3296e35f5d6db328b49e2cb9059e53ba extends Template
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 30
+            // line 65
             echo "            <tr>
                 <td colspan=\"5\">no records found</td>
             </tr>
@@ -142,7 +177,7 @@ class __TwigTemplate_3296e35f5d6db328b49e2cb9059e53ba extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['reservation_restaurant'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 34
+        // line 69
         echo "        </tbody>
     </table>
 ";
@@ -175,7 +210,7 @@ class __TwigTemplate_3296e35f5d6db328b49e2cb9059e53ba extends Template
      */
     public function getDebugInfo()
     {
-        return array (  146 => 34,  137 => 30,  128 => 26,  123 => 24,  119 => 23,  115 => 22,  111 => 21,  108 => 20,  103 => 19,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  181 => 69,  172 => 65,  163 => 61,  158 => 59,  154 => 58,  150 => 57,  146 => 56,  143 => 55,  138 => 54,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -185,9 +220,44 @@ class __TwigTemplate_3296e35f5d6db328b49e2cb9059e53ba extends Template
 {% block title %}ReservationRestaurant List{% endblock %}
 
 {% block body %}
-    <h1>ReservationRestaurant List</h1>
+<script>
+document.getElementById('search-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Empêcher la soumission du formulaire par défaut
 
-    <table class=\"table\">
+    var date = document.getElementById('date-input').value; // Récupérer la date saisie dans le champ de recherche
+    var restaurantName = document.getElementById('restaurant-name-input').value; // Récupérer le nom du restaurant saisi
+
+    // Envoyer la requête AJAX avec la date saisie et le nom du restaurant
+    fetch('/reservations/search?date=' + date + '&restaurantName=' + restaurantName)
+        .then(response => response.json())
+        .then(data => {
+            // Mettre à jour le contenu du tableau HTML avec les résultats de la recherche
+            var tableBody = document.getElementById('reservation-table-body');
+            tableBody.innerHTML = ''; // Effacer le contenu actuel du tableau
+
+            // Ajouter chaque réservation correspondant à la date saisie dans le tableau
+            data.forEach(function(reservation) {
+                var row = '<tr>';
+                row += '<td>' + reservation.id + '</td>'; // Modifier avec les propriétés de la réservation
+                row += '<td>' + reservation.date + '</td>'; // Modifier avec les propriétés de la réservation
+                row += '<td>' + reservation.nbpersonne + '</td>'; // Modifier avec les propriétés de la réservation
+                row += '<td>' + reservation.heure + '</td>'; // Modifier avec les propriétés de la réservation
+                row += '</tr>';
+                tableBody.innerHTML += row; // Ajouter la ligne au tableau
+            });
+        })
+        .catch(error => console.error('Error:', error));
+});
+
+</script>
+
+    <h1>Reservation Restaurant </h1>
+<form id=\"search-form\" action=\"/reservation/restaurant/admin/list\" method=\"GET\">
+    <input type=\"date\" id=\"date-input\" name=\"date\">
+    <input type=\"text\" id=\"restaurant-name-input\" name=\"restaurantName\">
+    <button type=\"submit\">Rechercher</button>
+</form>
+    <table class=\"table\" id=\"reservation-table-body\">
         <thead>
             <tr>
                 <th></th>

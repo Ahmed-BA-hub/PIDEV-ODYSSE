@@ -3,9 +3,44 @@
 {% block title %}ReservationRestaurant List{% endblock %}
 
 {% block body %}
-    <h1>Reservation Restaurant </h1>
+<script>
+document.getElementById('search-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Empêcher la soumission du formulaire par défaut
 
-    <table class="table">
+    var date = document.getElementById('date-input').value; // Récupérer la date saisie dans le champ de recherche
+    var restaurantName = document.getElementById('restaurant-name-input').value; // Récupérer le nom du restaurant saisi
+
+    // Envoyer la requête AJAX avec la date saisie et le nom du restaurant
+    fetch('/reservations/search?date=' + date + '&restaurantName=' + restaurantName)
+        .then(response => response.json())
+        .then(data => {
+            // Mettre à jour le contenu du tableau HTML avec les résultats de la recherche
+            var tableBody = document.getElementById('reservation-table-body');
+            tableBody.innerHTML = ''; // Effacer le contenu actuel du tableau
+
+            // Ajouter chaque réservation correspondant à la date saisie dans le tableau
+            data.forEach(function(reservation) {
+                var row = '<tr>';
+                row += '<td>' + reservation.id + '</td>'; // Modifier avec les propriétés de la réservation
+                row += '<td>' + reservation.date + '</td>'; // Modifier avec les propriétés de la réservation
+                row += '<td>' + reservation.nbpersonne + '</td>'; // Modifier avec les propriétés de la réservation
+                row += '<td>' + reservation.heure + '</td>'; // Modifier avec les propriétés de la réservation
+                row += '</tr>';
+                tableBody.innerHTML += row; // Ajouter la ligne au tableau
+            });
+        })
+        .catch(error => console.error('Error:', error));
+});
+
+</script>
+
+    <h1>Reservation Restaurant </h1>
+<form id="search-form" action="/reservation/restaurant/admin/list" method="GET">
+    <input type="date" id="date-input" name="date">
+    <input type="text" id="restaurant-name-input" name="restaurantName">
+    <button type="submit">Rechercher</button>
+</form>
+    <table class="table" id="reservation-table-body">
         <thead>
             <tr>
                 <th></th>

@@ -13,25 +13,32 @@ class ReservationRestaurant
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column]
+    #[ORM\Column]  
+    #[Groups("reservation")]
     private ?int $id = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[Groups("reservation")]
     private ?\DateTimeInterface $date = null;
 
     #[ORM\Column]
+    #[Groups("reservation")]
     private ?int $nbpersonne = null;
 
     #[ORM\Column]
+    #[Groups("reservation")]
     private ?int $heure = null;
 
     #[ORM\ManyToOne(inversedBy: 'reservationRestaurants')]
+    #[Groups("reservation")]
     private ?Restaurant $restaurant = null;
 
     #[ORM\ManyToOne(inversedBy: 'reservationRestaurants')]
+    #[Groups("reservation")]
     private ?User $user = null;
 
     #[ORM\OneToMany(targetEntity: Reclamation::class, mappedBy: 'ReservationRestaurant')]
+    #[Groups("reservation")]
     private Collection $reclamations;
 
     public function __construct()

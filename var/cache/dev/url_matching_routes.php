@@ -37,6 +37,7 @@ return [
         '/reservation/restaurant/admin/list' => [[['_route' => 'app_reservation_restaurant_list_admin', '_controller' => 'App\\Controller\\ReservationRestaurantController::listadmin'], null, ['GET' => 0], null, false, false, null]],
         '/restaurantList' => [[['_route' => 'app_restaurant_list', '_controller' => 'App\\Controller\\RestaurantController::index'], null, null, null, false, false, null]],
         '/sign/up' => [[['_route' => 'app_sign_up', '_controller' => 'App\\Controller\\SignUpController::index'], null, null, null, false, false, null]],
+        '/reservations/search' => [[['_route' => 'search_reservations', '_controller' => 'App\\Controller\\ReservationRestaurantController::search'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

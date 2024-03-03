@@ -12,6 +12,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Serializer\SerializerInterface;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
+
 
 #[Route('/reservation/restaurant')]
 class ReservationRestaurantController extends AbstractController
@@ -19,16 +23,20 @@ class ReservationRestaurantController extends AbstractController
     #[Route('/', name: 'app_reservation_restaurant_index', methods: ['GET'])]
     public function index(ReservationRestaurantRepository $reservationRestaurantRepository,UserRepository $repo): Response
     {
+        
         $user=$repo->findOneById(4);
         return $this->render('reservation_restaurant/index.html.twig', [
             'reservation_restaurants' => $reservationRestaurantRepository->findByUser($user),
         ]);
     }
     #[Route('/admin/list', name: 'app_reservation_restaurant_list_admin', methods: ['GET'])]
-    public function listadmin(ReservationRestaurantRepository $reservationRestaurantRepository): Response
+    public function listadmin(ReservationRestaurantRepository $reservationRestaurantRepository,Request $request): Response
     {
+        $date = $request->query->get('date');
+        
+        $date = \DateTime::createFromFormat('Y-m-d',  $date );
         return $this->render('reservation_restaurant/list_admin.html.twig', [
-            'reservation_restaurants' => $reservationRestaurantRepository->findAll(),
+            'reservation_restaurants' => $reservationRestaurantRepository->findByDate($date),
         ]);
     }
     #[Route('/new/{id}', name: 'app_reservation_restaurant_new', methods: ['GET', 'POST'])]
@@ -53,6 +61,21 @@ class ReservationRestaurantController extends AbstractController
             'form' => $form,
         ]);
     }
+    #[Route('/reservations/search', name: 'search_reservations')]
+    public function search(Request $request,ReservationRestaurantRepository $repo,SerializerInterface $serializer): Response
+    {
+        $date = $request->query->get('date');
+        $restaurantName = $request->query->get('restaurant_name');
+        $date = \DateTime::createFromFormat('Y-m-d',  $date );
+        // Effectuez votre logique de recherche ici
+        // Par exemple, utilisez une méthode de repository pour rechercher les réservations
+        $reservations =$repo->findByDate( $date);
+
+        $reservationData = $serializer->normalize($reservations, null, [
+            AbstractNormalizer::IGNORED_ATTRIBUTES => ['restaurant', 'user', 'reclamations']
+        ]);
+        return new JsonResponse($reservationData);
+    }    
 
     #[Route('/{id}', name: 'app_reservation_restaurant_show', methods: ['GET'])]
     public function show(ReservationRestaurant $reservationRestaurant): Response

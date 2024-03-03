@@ -3,3 +3,6 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+search_reservations:
+    path: /reservations/search
+    controller: App\Controller\ReservationRestaurantController::search
