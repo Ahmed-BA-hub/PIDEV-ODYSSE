@@ -586,3 +586,8 @@ db7963,::1,GET,http://localhost:8000/reservation/hotel/tri,1709478001,,200,reque
 69377a,::1,GET,http://localhost:8000/reservation/hotel/tri,1709478006,,200,request
 259772,::1,GET,http://localhost:8000/reservation/hotel/tri,1709478029,,200,request
 58f92e,::1,GET,http://localhost:8000/reservation/hotel/admin/list,1709478038,,200,request
+8ef335,::1,GET,http://localhost:8000/,1709495560,,200,request
+323e87,::1,GET,http://localhost:8000/programe/,1709495588,,200,request
+238d0f,::1,GET,http://localhost:8000/reservation/programme/new/1,1709495595,,200,request
+78da30,::1,POST,http://localhost:8000/reservation/programme/new/1,1709495601,,303,request
+4451fc,::1,GET,http://localhost:8000/reservation/programme/,1709495601,,200,request

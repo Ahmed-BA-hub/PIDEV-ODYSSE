@@ -393,6 +393,7 @@
       <tag name="controller.service_arguments"/>
       <tag name="routing.route_loader"/>
     </service>
+    <service id="http_discovery.psr17_factory" class="Http\Discovery\Psr17Factory"/>
     <service id="App\Entity" class="App\Entity" abstract="true">
       <tag name="container.excluded" source="in &quot;config/services.yaml&quot;"/>
     </service>
@@ -579,6 +580,12 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="Mailtrap\Bridge\Transport\MailtrapTransportFactory" class="Mailtrap\Bridge\Transport\MailtrapTransportFactory" autowire="true" autoconfigure="true">
+      <tag name="mailer.transport_factory"/>
+      <argument type="service" id="debug.event_dispatcher"/>
+      <argument type="service" id=".debug.http_client"/>
+      <argument type="service" id="monolog.logger"/>
+    </service>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory"/>
     <service id="argument_resolver.backed_enum_resolver" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\BackedEnumValueResolver">
       <tag priority="100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\BackedEnumValueResolver">controller.argument_value_resolver</tag>
@@ -606,7 +613,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.i2BGYKi"/>
+      <argument type="service" id=".service_locator.yMaCMfc"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -2092,6 +2099,16 @@
       </call>
       <factory class="Symfony\Component\HttpClient\HttpClient" method="create"/>
     </service>
+    <service id="psr18.http_client" class="Symfony\Component\HttpClient\Psr18Client">
+      <argument type="service" id=".debug.http_client"/>
+      <argument type="service" id="http_discovery.psr17_factory" on-invalid="ignore"/>
+      <argument type="service" id="http_discovery.psr17_factory" on-invalid="ignore"/>
+    </service>
+    <service id="httplug.http_client" class="Symfony\Component\HttpClient\HttplugClient">
+      <argument type="service" id=".debug.http_client"/>
+      <argument type="service" id="http_discovery.psr17_factory" on-invalid="ignore"/>
+      <argument type="service" id="http_discovery.psr17_factory" on-invalid="ignore"/>
+    </service>
     <service id="http_client.abstract_retry_strategy" class="Symfony\Component\HttpClient\Retry\GenericRetryStrategy" abstract="true">
       <argument type="abstract">http codes</argument>
       <argument type="abstract">delay ms</argument>
@@ -3504,7 +3521,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.i2BGYKi"/>
+      <argument type="service" id=".service_locator.yMaCMfc"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -8180,12 +8197,14 @@
         <argument key="reservationProgrammeRepository" type="service_closure" id="App\Repository\ReservationProgrammeRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.JWYvmon" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.R_OLCzM" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="mailer" type="service_closure" id="mailer.mailer"/>
         <argument key="repo" type="service_closure" id="App\Repository\ProgrameRepository"/>
         <argument key="repoUser" type="service_closure" id="App\Repository\UserRepository"/>
+        <argument key="transport" type="service_closure" id="mailer.default_transport"/>
       </argument>
     </service>
     <service id=".service_locator..EphVwX" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -8265,7 +8284,7 @@
         <argument key="restaurantRepository" type="service_closure" id="App\Repository\RestaurantRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.i2BGYKi" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.yMaCMfc" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\CivilisationController::delete" type="service_closure" id=".service_locator.6WpbVPW"/>
@@ -8304,7 +8323,7 @@
         <argument key="App\Controller\ReservationProgrammeController::edit" type="service_closure" id=".service_locator.F6QSc9e"/>
         <argument key="App\Controller\ReservationProgrammeController::index" type="service_closure" id=".service_locator.seCvtRR"/>
         <argument key="App\Controller\ReservationProgrammeController::listAdmin" type="service_closure" id=".service_locator.EAPE5u_"/>
-        <argument key="App\Controller\ReservationProgrammeController::new" type="service_closure" id=".service_locator.JWYvmon"/>
+        <argument key="App\Controller\ReservationProgrammeController::new" type="service_closure" id=".service_locator.R_OLCzM"/>
         <argument key="App\Controller\ReservationProgrammeController::show" type="service_closure" id=".service_locator..EphVwX"/>
         <argument key="App\Controller\ReservationRestaurantController::delete" type="service_closure" id=".service_locator.MfpZs.F"/>
         <argument key="App\Controller\ReservationRestaurantController::edit" type="service_closure" id=".service_locator.XwWjNG1"/>
@@ -8354,7 +8373,7 @@
         <argument key="App\Controller\ReservationProgrammeController:edit" type="service_closure" id=".service_locator.F6QSc9e"/>
         <argument key="App\Controller\ReservationProgrammeController:index" type="service_closure" id=".service_locator.seCvtRR"/>
         <argument key="App\Controller\ReservationProgrammeController:listAdmin" type="service_closure" id=".service_locator.EAPE5u_"/>
-        <argument key="App\Controller\ReservationProgrammeController:new" type="service_closure" id=".service_locator.JWYvmon"/>
+        <argument key="App\Controller\ReservationProgrammeController:new" type="service_closure" id=".service_locator.R_OLCzM"/>
         <argument key="App\Controller\ReservationProgrammeController:show" type="service_closure" id=".service_locator..EphVwX"/>
         <argument key="App\Controller\ReservationRestaurantController:delete" type="service_closure" id=".service_locator.MfpZs.F"/>
         <argument key="App\Controller\ReservationRestaurantController:edit" type="service_closure" id=".service_locator.XwWjNG1"/>
@@ -10522,6 +10541,12 @@
         <argument key="Vich\UploaderBundle\Twig\Extension\UploaderExtensionRuntime" type="service_closure" id="Vich\UploaderBundle\Twig\Extension\UploaderExtensionRuntime"/>
       </argument>
     </service>
+    <service id="Psr\Http\Message\RequestFactoryInterface" alias="http_discovery.psr17_factory"/>
+    <service id="Psr\Http\Message\ResponseFactoryInterface" alias="http_discovery.psr17_factory"/>
+    <service id="Psr\Http\Message\ServerRequestFactoryInterface" alias="http_discovery.psr17_factory"/>
+    <service id="Psr\Http\Message\StreamFactoryInterface" alias="http_discovery.psr17_factory"/>
+    <service id="Psr\Http\Message\UploadedFileFactoryInterface" alias="http_discovery.psr17_factory"/>
+    <service id="Psr\Http\Message\UriFactoryInterface" alias="http_discovery.psr17_factory"/>
     <service id="App\Kernel" alias="kernel" public="true"/>
     <service id="Symfony\Component\DependencyInjection\ParameterBag\ContainerBagInterface" alias="parameter_bag"/>
     <service id="Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface" alias="parameter_bag"/>
@@ -10557,6 +10582,11 @@
     <service id="Symfony\Component\AssetMapper\AssetMapperInterface" alias="asset_mapper"/>
     <service id="Symfony\Component\AssetMapper\ImportMap\ImportMapManager" alias="asset_mapper.importmap.manager"/>
     <service id="Symfony\Contracts\HttpClient\HttpClientInterface" alias=".debug.http_client"/>
+    <service id="Psr\Http\Client\ClientInterface" alias="psr18.http_client"/>
+    <service id="Http\Client\HttpAsyncClient" alias="httplug.http_client"/>
+    <service id="Http\Client\HttpClient" alias="httplug.http_client">
+      <deprecated package="symfony/framework-bundle" version="6.3">The "%alias_id%" service is deprecated, use "Psr\Http\Client\ClientInterface" instead.</deprecated>
+    </service>
     <service id="mailer" alias="mailer.mailer"/>
     <service id="Symfony\Component\Mailer\MailerInterface" alias="mailer.mailer"/>
     <service id="Symfony\Component\Mailer\Transport\TransportInterface" alias="mailer.default_transport"/>
@@ -10707,7 +10737,7 @@
     <service id="Vich\UploaderBundle\Form\Type\VichImageType" alias="vich_uploader.form.type.image"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.w7.f4fT" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.i2BGYKi"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.yMaCMfc"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -10739,13 +10769,14 @@
     <service id=".service_locator.T7POSV2" alias=".service_locator.s2ZjAo6"/>
     <service id=".service_locator.BVsozo7" alias=".service_locator.rv0xkic"/>
     <service id=".service_locator.KTwtcW0" alias=".service_locator.seCvtRR"/>
+    <service id=".service_locator.KeEqb3Q" alias=".service_locator.R_OLCzM"/>
     <service id=".service_locator.VCugB2_" alias=".service_locator.F6QSc9e"/>
     <service id=".service_locator.wDIOEGw" alias=".service_locator.1wfHddh"/>
     <service id=".service_locator.nU55eao" alias=".service_locator.9JmOAa6"/>
     <service id=".service_locator.uIeUrOj" alias=".service_locator.IjaHlA8"/>
     <service id=".service_locator.z.6Kv_k" alias=".service_locator.XwWjNG1"/>
     <service id=".service_locator.mJ8dGiC" alias=".service_locator.MfpZs.F"/>
-    <service id=".service_locator.D0tNOYO" alias=".service_locator.i2BGYKi"/>
+    <service id=".service_locator.388qW.d" alias=".service_locator.yMaCMfc"/>
     <service id=".service_locator.BFrsqsn" alias=".service_locator.F9PKc.7"/>
     <service id=".service_locator.rh3XJqR" alias=".service_locator.4qlnHLP"/>
     <service id=".service_locator.FBc_U41" alias=".service_locator.JsvzaN7"/>
@@ -10794,7 +10825,7 @@
     <service id=".service_locator.x..QTuK" alias=".service_locator.rv0xkic"/>
     <service id=".service_locator.3d9GK42" alias=".service_locator.seCvtRR"/>
     <service id=".service_locator.wjj8U5a" alias=".service_locator.EAPE5u_"/>
-    <service id=".service_locator.ow9EX2Z" alias=".service_locator.JWYvmon"/>
+    <service id=".service_locator.P8.Z2Bm" alias=".service_locator.R_OLCzM"/>
     <service id=".service_locator.yLznjT_" alias=".service_locator..EphVwX"/>
     <service id=".service_locator.lLhqMoG" alias=".service_locator.F6QSc9e"/>
     <service id=".service_locator.hq06EVy" alias=".service_locator.1wfHddh"/>

@@ -1310,6 +1310,6 @@ class __TwigTemplate_f9152df5839393bb9a573478395a1ebe extends Template
 \t\t\t
 \t\t
 {% endblock %}
-", "restaurant/index.html.twig", "C:\\Users\\Racha\\Documents\\GitHub\\PIDev-Reservation\\templates\\restaurant\\index.html.twig");
+", "restaurant/index.html.twig", "C:\\Users\\Racha\\Documents\\GitHub\\PIDEV-ODYSSE\\templates\\restaurant\\index.html.twig");
     }
 }

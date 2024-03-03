@@ -10,8 +10,12 @@ use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mailer\Transport\TransportInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 
 #[Route('/reservation/programme')]
 class ReservationProgrammeController extends AbstractController
@@ -33,7 +37,7 @@ class ReservationProgrammeController extends AbstractController
         ]);
     }
     #[Route('/new/{id}', name: 'app_reservation_programme_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager,ProgrameRepository $repo,UserRepository $repoUser): Response
+    public function new(Request $request,MailerInterface $mailer,TransportInterface $transport, EntityManagerInterface $entityManager,ProgrameRepository $repo,UserRepository $repoUser): Response
     {
         $id =$request->get('id');
         $programme=$repo->findOneById($id);        
@@ -43,6 +47,15 @@ class ReservationProgrammeController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $message = (new Email())
+            ->to('mbenattiaa@gmail.com')
+            ->from('no-reply@demomailtrap.com')
+            ->subject('Confirmation Reservation')
+            ->text('Votre Resrvation du programme est confirmé')
+        ;
+
+        $response = $transport->send($message);
+
             $reservationProgramme->setUser($user);
             $reservationProgramme->setProgramme($programme);
             $entityManager->persist($reservationProgramme);

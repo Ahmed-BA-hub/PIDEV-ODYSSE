@@ -133,7 +133,7 @@ class __TwigTemplate_6a19eb15e3109d17bfb9a5aacbe131b1 extends Template
             echo "\">edit</a>
                     <a href=\"";
             // line 28
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reclamation_new", ["idprogramme" => twig_get_attribute($this->env, $this->source, $context["reservation_programme"], "id", [], "any", false, false, false, 28)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reclamation_new", ["idprogramme" => twig_get_attribute($this->env, $this->source, $context["reservation_programme"], "id", [], "any", false, false, false, 28), "idrestaurant" => 0, "idhotel" => 0]), "html", null, true);
             echo "\">Reclamer</a>
                 </td>
 
@@ -216,7 +216,7 @@ class __TwigTemplate_6a19eb15e3109d17bfb9a5aacbe131b1 extends Template
                 <td>
                     <a href=\"{{ path('app_reservation_programme_show', {'id': reservation_programme.id}) }}\">show</a>
                     <a href=\"{{ path('app_reservation_programme_edit', {'id': reservation_programme.id}) }}\">edit</a>
-                    <a href=\"{{ path('app_reclamation_new', {'idprogramme': reservation_programme.id}) }}\">Reclamer</a>
+                    <a href=\"{{ path('app_reclamation_new', {'idprogramme': reservation_programme.id,'idrestaurant':0,'idhotel':0}) }}\">Reclamer</a>
                 </td>
 
             </tr>
