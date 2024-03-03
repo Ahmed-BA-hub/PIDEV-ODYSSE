@@ -30,6 +30,7 @@ return [
         '/reclamation' => [[['_route' => 'app_reclamation_index', '_controller' => 'App\\Controller\\ReclamationController::index'], null, ['GET' => 0], null, true, false, null]],
         '/reclamation/admin' => [[['_route' => 'app_reclamation_admin', '_controller' => 'App\\Controller\\ReclamationController::indexAdmin'], null, ['GET' => 0], null, false, false, null]],
         '/reservation/hotel' => [[['_route' => 'app_reservation_hotel_index', '_controller' => 'App\\Controller\\ReservationHotelController::index'], null, ['GET' => 0], null, true, false, null]],
+        '/reservation/hotel/tri' => [[['_route' => 'app_reservation_hotel_tri', '_controller' => 'App\\Controller\\ReservationHotelController::tri'], null, ['GET' => 0], null, false, false, null]],
         '/reservation/hotel/admin/list' => [[['_route' => 'app_reservation_hotel_admin_list', '_controller' => 'App\\Controller\\ReservationHotelController::listadmin'], null, ['GET' => 0], null, false, false, null]],
         '/reservation/programme' => [[['_route' => 'app_reservation_programme_index', '_controller' => 'App\\Controller\\ReservationProgrammeController::index'], null, ['GET' => 0], null, true, false, null]],
         '/reservation/programme/admin/list' => [[['_route' => 'app_reservation_programme_list_admin', '_controller' => 'App\\Controller\\ReservationProgrammeController::listAdmin'], null, ['GET' => 0], null, false, false, null]],

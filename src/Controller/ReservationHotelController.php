@@ -24,6 +24,15 @@ class ReservationHotelController extends AbstractController
             'reservation_hotels' => $reservationHotelRepository->findByUser($user),
         ]);
     }
+    #[Route('/tri', name: 'app_reservation_hotel_tri', methods: ['GET'])]
+    public function tri(ReservationHotelRepository $reservationHotelRepository,UserRepository $repo): Response
+    {
+        $reservations = $reservationHotelRepository->findBy([], ['date' => 'ASC']);
+
+        return $this->render('reservation_hotel/list_admin.html.twig', [
+            'reservation_hotels' => $reservations,
+        ]);
+    }    
     #[Route('/admin/list', name: 'app_reservation_hotel_admin_list', methods: ['GET'])]
     public function listadmin(ReservationHotelRepository $reservationHotelRepository): Response
     {

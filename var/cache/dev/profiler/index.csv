@@ -573,3 +573,16 @@ d24744,::1,GET,http://localhost:8000/reservation/restaurant/admin/list?date=&res
 f5dfde,::1,GET,http://localhost:8000/reservation/restaurant/admin/list?date=&restaurantName=2,1709477566,,200,request
 e424d7,::1,GET,http://localhost:8000/reservation/restaurant/admin/list?date=&restaurantName=2,1709477574,,200,request
 fe81e5,::1,GET,http://localhost:8000/reservation/restaurant/admin/list?date=2019-01-01&restaurantName=,1709477596,,200,request
+b0cad9,::1,GET,http://localhost:8000/reservation/hotel/admin/list,1709477700,,200,request
+0d7b33,::1,GET,http://localhost:8000/reservation/hotel/admin/list,1709477889,,200,request
+1e13c5,::1,GET,http://localhost:8000/reservation/hotel/tri,1709477892,33273a,500,request
+33273a,::1,GET,http://localhost:8000/reservation/hotel/tri,1709477892,,500,request
+d3768d,::1,GET,http://localhost:8000/reservation/hotel/tri,1709477910,c7a193,500,request
+c7a193,::1,GET,http://localhost:8000/reservation/hotel/tri,1709477910,,500,request
+9b057b,::1,GET,http://localhost:8000/reservation/hotel/tri,1709477939,,200,request
+b6dd88,::1,GET,http://localhost:8000/reservation/hotel/admin/list,1709477946,,200,request
+7463ce,::1,GET,http://localhost:8000/reservation/hotel/tri,1709477976,,200,request
+db7963,::1,GET,http://localhost:8000/reservation/hotel/tri,1709478001,,200,request
+69377a,::1,GET,http://localhost:8000/reservation/hotel/tri,1709478006,,200,request
+259772,::1,GET,http://localhost:8000/reservation/hotel/tri,1709478029,,200,request
+58f92e,::1,GET,http://localhost:8000/reservation/hotel/admin/list,1709478038,,200,request

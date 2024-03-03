@@ -86,7 +86,11 @@ class __TwigTemplate_e2a6a1923752086001d2ac58adc2355c extends Template
 
         // line 6
         echo "    <h1>Les Reservations Hotel </h1>
-
+<a href=\"";
+        // line 7
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation_hotel_tri");
+        echo "\">Trier</a>
+           
     <table class=\"table\">
         <thead>
             <tr>
@@ -99,33 +103,33 @@ class __TwigTemplate_e2a6a1923752086001d2ac58adc2355c extends Template
         </thead>
         <tbody>
         ";
-        // line 19
+        // line 20
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["reservation_hotels"]) || array_key_exists("reservation_hotels", $context) ? $context["reservation_hotels"] : (function () { throw new RuntimeError('Variable "reservation_hotels" does not exist.', 19, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["reservation_hotels"]) || array_key_exists("reservation_hotels", $context) ? $context["reservation_hotels"] : (function () { throw new RuntimeError('Variable "reservation_hotels" does not exist.', 20, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["reservation_hotel"]) {
-            // line 20
+            // line 21
             echo "            <tr>
                 <td>";
-            // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation_hotel"], "hotel", [], "any", false, false, false, 21), "html", null, true);
-            echo "</td>
-                <td>";
             // line 22
-            ((twig_get_attribute($this->env, $this->source, $context["reservation_hotel"], "date", [], "any", false, false, false, 22)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation_hotel"], "date", [], "any", false, false, false, 22), "Y-m-d"), "html", null, true))) : (print ("")));
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation_hotel"], "hotel", [], "any", false, false, false, 22), "html", null, true);
             echo "</td>
                 <td>";
             // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation_hotel"], "nbpersonne", [], "any", false, false, false, 23), "html", null, true);
+            ((twig_get_attribute($this->env, $this->source, $context["reservation_hotel"], "date", [], "any", false, false, false, 23)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation_hotel"], "date", [], "any", false, false, false, 23), "Y-m-d"), "html", null, true))) : (print ("")));
             echo "</td>
                 <td>";
             // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation_hotel"], "heure", [], "any", false, false, false, 24), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation_hotel"], "nbpersonne", [], "any", false, false, false, 24), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 25
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation_hotel"], "heure", [], "any", false, false, false, 25), "html", null, true);
             echo "</td>
                 <td>
                     <a href=\"";
-            // line 26
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation_hotel_show", ["id" => twig_get_attribute($this->env, $this->source, $context["reservation_hotel"], "id", [], "any", false, false, false, 26)]), "html", null, true);
+            // line 27
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation_hotel_show", ["id" => twig_get_attribute($this->env, $this->source, $context["reservation_hotel"], "id", [], "any", false, false, false, 27)]), "html", null, true);
             echo "\">show</a>
                 </td>
             </tr>
@@ -133,7 +137,7 @@ class __TwigTemplate_e2a6a1923752086001d2ac58adc2355c extends Template
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 30
+            // line 31
             echo "            <tr>
                 <td colspan=\"5\">no records found</td>
             </tr>
@@ -142,7 +146,7 @@ class __TwigTemplate_e2a6a1923752086001d2ac58adc2355c extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['reservation_hotel'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 34
+        // line 35
         echo "        </tbody>
     </table>
 
@@ -176,7 +180,7 @@ class __TwigTemplate_e2a6a1923752086001d2ac58adc2355c extends Template
      */
     public function getDebugInfo()
     {
-        return array (  146 => 34,  137 => 30,  128 => 26,  123 => 24,  119 => 23,  115 => 22,  111 => 21,  108 => 20,  103 => 19,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  150 => 35,  141 => 31,  132 => 27,  127 => 25,  123 => 24,  119 => 23,  115 => 22,  112 => 21,  107 => 20,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -187,7 +191,8 @@ class __TwigTemplate_e2a6a1923752086001d2ac58adc2355c extends Template
 
 {% block body %}
     <h1>Les Reservations Hotel </h1>
-
+<a href=\"{{ path('app_reservation_hotel_tri') }}\">Trier</a>
+           
     <table class=\"table\">
         <thead>
             <tr>

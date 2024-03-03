@@ -606,7 +606,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.jkWh5TB"/>
+      <argument type="service" id=".service_locator.i2BGYKi"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -3504,7 +3504,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.jkWh5TB"/>
+      <argument type="service" id=".service_locator.i2BGYKi"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -8265,7 +8265,7 @@
         <argument key="restaurantRepository" type="service_closure" id="App\Repository\RestaurantRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.jkWh5TB" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.i2BGYKi" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\CivilisationController::delete" type="service_closure" id=".service_locator.6WpbVPW"/>
@@ -8299,6 +8299,7 @@
         <argument key="App\Controller\ReservationHotelController::listadmin" type="service_closure" id=".service_locator.c5_s8a7"/>
         <argument key="App\Controller\ReservationHotelController::new" type="service_closure" id=".service_locator.sw2rHsm"/>
         <argument key="App\Controller\ReservationHotelController::show" type="service_closure" id=".service_locator.TxgI0Ry"/>
+        <argument key="App\Controller\ReservationHotelController::tri" type="service_closure" id=".service_locator.f9N6x9G"/>
         <argument key="App\Controller\ReservationProgrammeController::delete" type="service_closure" id=".service_locator.1wfHddh"/>
         <argument key="App\Controller\ReservationProgrammeController::edit" type="service_closure" id=".service_locator.F6QSc9e"/>
         <argument key="App\Controller\ReservationProgrammeController::index" type="service_closure" id=".service_locator.seCvtRR"/>
@@ -8348,6 +8349,7 @@
         <argument key="App\Controller\ReservationHotelController:listadmin" type="service_closure" id=".service_locator.c5_s8a7"/>
         <argument key="App\Controller\ReservationHotelController:new" type="service_closure" id=".service_locator.sw2rHsm"/>
         <argument key="App\Controller\ReservationHotelController:show" type="service_closure" id=".service_locator.TxgI0Ry"/>
+        <argument key="App\Controller\ReservationHotelController:tri" type="service_closure" id=".service_locator.f9N6x9G"/>
         <argument key="App\Controller\ReservationProgrammeController:delete" type="service_closure" id=".service_locator.1wfHddh"/>
         <argument key="App\Controller\ReservationProgrammeController:edit" type="service_closure" id=".service_locator.F6QSc9e"/>
         <argument key="App\Controller\ReservationProgrammeController:index" type="service_closure" id=".service_locator.seCvtRR"/>
@@ -10705,7 +10707,7 @@
     <service id="Vich\UploaderBundle\Form\Type\VichImageType" alias="vich_uploader.form.type.image"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.w7.f4fT" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.jkWh5TB"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.i2BGYKi"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -10743,7 +10745,7 @@
     <service id=".service_locator.uIeUrOj" alias=".service_locator.IjaHlA8"/>
     <service id=".service_locator.z.6Kv_k" alias=".service_locator.XwWjNG1"/>
     <service id=".service_locator.mJ8dGiC" alias=".service_locator.MfpZs.F"/>
-    <service id=".service_locator.jsvQ95g" alias=".service_locator.jkWh5TB"/>
+    <service id=".service_locator.D0tNOYO" alias=".service_locator.i2BGYKi"/>
     <service id=".service_locator.BFrsqsn" alias=".service_locator.F9PKc.7"/>
     <service id=".service_locator.rh3XJqR" alias=".service_locator.4qlnHLP"/>
     <service id=".service_locator.FBc_U41" alias=".service_locator.JsvzaN7"/>
