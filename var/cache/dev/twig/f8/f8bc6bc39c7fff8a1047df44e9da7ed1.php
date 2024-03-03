@@ -90,8 +90,7 @@ document.getElementById('search-form').addEventListener('submit', function(event
     event.preventDefault(); // Empêcher la soumission du formulaire par défaut
 
     var date = document.getElementById('date-input').value; // Récupérer la date saisie dans le champ de recherche
-    var restaurantName = document.getElementById('restaurant-name-input').value; // Récupérer le nom du restaurant saisi
-
+   var restaurantName = document.getElementById('restaurant-name-select').value;
     // Envoyer la requête AJAX avec la date saisie et le nom du restaurant
     fetch('/reservations/search?date=' + date + '&restaurantName=' + restaurantName)
         .then(response => response.json())
@@ -119,7 +118,26 @@ document.getElementById('search-form').addEventListener('submit', function(event
     <h1>Reservation Restaurant </h1>
 <form id=\"search-form\" action=\"/reservation/restaurant/admin/list\" method=\"GET\">
     <input type=\"date\" id=\"date-input\" name=\"date\">
-    <input type=\"text\" id=\"restaurant-name-input\" name=\"restaurantName\">
+<select id=\"restaurant-name-select\" name=\"restaurantName\"> <!-- Utilisez le même nom pour l'ID et le nom -->
+    <option value=\"\">-- Choisissez un restaurant --</option>
+    ";
+        // line 41
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["restaurants"]) || array_key_exists("restaurants", $context) ? $context["restaurants"] : (function () { throw new RuntimeError('Variable "restaurants" does not exist.', 41, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["restaurant"]) {
+            // line 42
+            echo "        <option value=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["restaurant"], "id", [], "any", false, false, false, 42), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["restaurant"], "nom", [], "any", false, false, false, 42), "html", null, true);
+            echo "</option>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['restaurant'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 44
+        echo "</select>
     <button type=\"submit\">Rechercher</button>
 </form>
     <table class=\"table\" id=\"reservation-table-body\">
@@ -134,33 +152,33 @@ document.getElementById('search-form').addEventListener('submit', function(event
         </thead>
         <tbody>
         ";
-        // line 54
+        // line 58
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["reservation_restaurants"]) || array_key_exists("reservation_restaurants", $context) ? $context["reservation_restaurants"] : (function () { throw new RuntimeError('Variable "reservation_restaurants" does not exist.', 54, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["reservation_restaurants"]) || array_key_exists("reservation_restaurants", $context) ? $context["reservation_restaurants"] : (function () { throw new RuntimeError('Variable "reservation_restaurants" does not exist.', 58, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["reservation_restaurant"]) {
-            // line 55
+            // line 59
             echo "            <tr>
                 <td>";
-            // line 56
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation_restaurant"], "restaurant", [], "any", false, false, false, 56), "html", null, true);
+            // line 60
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation_restaurant"], "restaurant", [], "any", false, false, false, 60), "html", null, true);
             echo "</td>
                 <td>";
-            // line 57
-            ((twig_get_attribute($this->env, $this->source, $context["reservation_restaurant"], "date", [], "any", false, false, false, 57)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation_restaurant"], "date", [], "any", false, false, false, 57), "Y-m-d"), "html", null, true))) : (print ("")));
+            // line 61
+            ((twig_get_attribute($this->env, $this->source, $context["reservation_restaurant"], "date", [], "any", false, false, false, 61)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation_restaurant"], "date", [], "any", false, false, false, 61), "Y-m-d"), "html", null, true))) : (print ("")));
             echo "</td>
                 <td>";
-            // line 58
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation_restaurant"], "nbpersonne", [], "any", false, false, false, 58), "html", null, true);
+            // line 62
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation_restaurant"], "nbpersonne", [], "any", false, false, false, 62), "html", null, true);
             echo "</td>
                 <td>";
-            // line 59
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation_restaurant"], "heure", [], "any", false, false, false, 59), "html", null, true);
+            // line 63
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation_restaurant"], "heure", [], "any", false, false, false, 63), "html", null, true);
             echo "</td>
                 <td>
                     <a href=\"";
-            // line 61
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation_restaurant_show", ["id" => twig_get_attribute($this->env, $this->source, $context["reservation_restaurant"], "id", [], "any", false, false, false, 61)]), "html", null, true);
+            // line 65
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation_restaurant_show", ["id" => twig_get_attribute($this->env, $this->source, $context["reservation_restaurant"], "id", [], "any", false, false, false, 65)]), "html", null, true);
             echo "\">show</a>
                  </td>
             </tr>
@@ -168,7 +186,7 @@ document.getElementById('search-form').addEventListener('submit', function(event
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 65
+            // line 69
             echo "            <tr>
                 <td colspan=\"5\">no records found</td>
             </tr>
@@ -177,7 +195,7 @@ document.getElementById('search-form').addEventListener('submit', function(event
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['reservation_restaurant'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 69
+        // line 73
         echo "        </tbody>
     </table>
 ";
@@ -210,7 +228,7 @@ document.getElementById('search-form').addEventListener('submit', function(event
      */
     public function getDebugInfo()
     {
-        return array (  181 => 69,  172 => 65,  163 => 61,  158 => 59,  154 => 58,  150 => 57,  146 => 56,  143 => 55,  138 => 54,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  199 => 73,  190 => 69,  181 => 65,  176 => 63,  172 => 62,  168 => 61,  164 => 60,  161 => 59,  156 => 58,  140 => 44,  129 => 42,  125 => 41,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -225,8 +243,7 @@ document.getElementById('search-form').addEventListener('submit', function(event
     event.preventDefault(); // Empêcher la soumission du formulaire par défaut
 
     var date = document.getElementById('date-input').value; // Récupérer la date saisie dans le champ de recherche
-    var restaurantName = document.getElementById('restaurant-name-input').value; // Récupérer le nom du restaurant saisi
-
+   var restaurantName = document.getElementById('restaurant-name-select').value;
     // Envoyer la requête AJAX avec la date saisie et le nom du restaurant
     fetch('/reservations/search?date=' + date + '&restaurantName=' + restaurantName)
         .then(response => response.json())
@@ -254,7 +271,12 @@ document.getElementById('search-form').addEventListener('submit', function(event
     <h1>Reservation Restaurant </h1>
 <form id=\"search-form\" action=\"/reservation/restaurant/admin/list\" method=\"GET\">
     <input type=\"date\" id=\"date-input\" name=\"date\">
-    <input type=\"text\" id=\"restaurant-name-input\" name=\"restaurantName\">
+<select id=\"restaurant-name-select\" name=\"restaurantName\"> <!-- Utilisez le même nom pour l'ID et le nom -->
+    <option value=\"\">-- Choisissez un restaurant --</option>
+    {% for restaurant in restaurants %}
+        <option value=\"{{ restaurant.id }}\">{{ restaurant.nom }}</option>
+    {% endfor %}
+</select>
     <button type=\"submit\">Rechercher</button>
 </form>
     <table class=\"table\" id=\"reservation-table-body\">

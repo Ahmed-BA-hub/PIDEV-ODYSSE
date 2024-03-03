@@ -8,8 +8,7 @@ document.getElementById('search-form').addEventListener('submit', function(event
     event.preventDefault(); // Empêcher la soumission du formulaire par défaut
 
     var date = document.getElementById('date-input').value; // Récupérer la date saisie dans le champ de recherche
-    var restaurantName = document.getElementById('restaurant-name-input').value; // Récupérer le nom du restaurant saisi
-
+   var restaurantName = document.getElementById('restaurant-name-select').value;
     // Envoyer la requête AJAX avec la date saisie et le nom du restaurant
     fetch('/reservations/search?date=' + date + '&restaurantName=' + restaurantName)
         .then(response => response.json())
@@ -37,7 +36,12 @@ document.getElementById('search-form').addEventListener('submit', function(event
     <h1>Reservation Restaurant </h1>
 <form id="search-form" action="/reservation/restaurant/admin/list" method="GET">
     <input type="date" id="date-input" name="date">
-    <input type="text" id="restaurant-name-input" name="restaurantName">
+<select id="restaurant-name-select" name="restaurantName"> <!-- Utilisez le même nom pour l'ID et le nom -->
+    <option value="">-- Choisissez un restaurant --</option>
+    {% for restaurant in restaurants %}
+        <option value="{{ restaurant.id }}">{{ restaurant.nom }}</option>
+    {% endfor %}
+</select>
     <button type="submit">Rechercher</button>
 </form>
     <table class="table" id="reservation-table-body">

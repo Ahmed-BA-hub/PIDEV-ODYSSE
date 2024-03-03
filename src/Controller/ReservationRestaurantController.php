@@ -23,20 +23,52 @@ class ReservationRestaurantController extends AbstractController
     #[Route('/', name: 'app_reservation_restaurant_index', methods: ['GET'])]
     public function index(ReservationRestaurantRepository $reservationRestaurantRepository,UserRepository $repo): Response
     {
-        
         $user=$repo->findOneById(4);
         return $this->render('reservation_restaurant/index.html.twig', [
             'reservation_restaurants' => $reservationRestaurantRepository->findByUser($user),
+            
         ]);
     }
     #[Route('/admin/list', name: 'app_reservation_restaurant_list_admin', methods: ['GET'])]
-    public function listadmin(ReservationRestaurantRepository $reservationRestaurantRepository,Request $request): Response
-    {
+    public function listadmin(
+        ReservationRestaurantRepository $reservationRestaurantRepository,
+        Request $request,
+        RestaurantRepository $restaurantRepository
+    ): Response {
+        // Récupérer les paramètres de la requête
         $date = $request->query->get('date');
-        
-        $date = \DateTime::createFromFormat('Y-m-d',  $date );
+        $restaurantId = $request->query->get('restaurantName');
+    
+        // Créer un objet DateTime à partir de la date si elle est fournie
+        if ($date) {
+            $date = \DateTime::createFromFormat('Y-m-d', $date);
+        }
+    
+        // Récupérer la liste des restaurants
+        $restaurants = $restaurantRepository->findAll();
+        $r=$restaurantRepository->findOneById($restaurantId);
+      
+
+        if($restaurantId){
+            
+            $reservation_restaurants = $reservationRestaurantRepository->findByRestaurant($r);
+        } 
+        // Si une date est fournie
+        if ($date) {
+                // Filtrer les réservations par date seulement
+                $reservation_restaurants = $reservationRestaurantRepository->findByDate($date);
+                
+            }
+         else {
+            // Si aucun paramètre n'est fourni, récupérer toutes les réservations
+            $reservation_restaurants = $reservationRestaurantRepository->findAll();
+            $reservation_restaurants = $reservationRestaurantRepository->findByRestaurant($r);
+            
+        }
+    
         return $this->render('reservation_restaurant/list_admin.html.twig', [
-            'reservation_restaurants' => $reservationRestaurantRepository->findByDate($date),
+            'reservation_restaurants' => $reservation_restaurants,
+            'restaurants' => $restaurants
         ]);
     }
     #[Route('/new/{id}', name: 'app_reservation_restaurant_new', methods: ['GET', 'POST'])]

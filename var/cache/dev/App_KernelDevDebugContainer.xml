@@ -606,7 +606,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.02Zimuh"/>
+      <argument type="service" id=".service_locator.jkWh5TB"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -3504,7 +3504,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.02Zimuh"/>
+      <argument type="service" id=".service_locator.jkWh5TB"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -8216,10 +8216,11 @@
         <argument key="reservationRestaurantRepository" type="service_closure" id="App\Repository\ReservationRestaurantRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.igSyiNQ" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.4SSJ11l" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="reservationRestaurantRepository" type="service_closure" id="App\Repository\ReservationRestaurantRepository"/>
+        <argument key="restaurantRepository" type="service_closure" id="App\Repository\RestaurantRepository"/>
       </argument>
     </service>
     <service id=".service_locator.IjaHlA8" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -8264,7 +8265,7 @@
         <argument key="restaurantRepository" type="service_closure" id="App\Repository\RestaurantRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.02Zimuh" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.jkWh5TB" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\CivilisationController::delete" type="service_closure" id=".service_locator.6WpbVPW"/>
@@ -8307,7 +8308,7 @@
         <argument key="App\Controller\ReservationRestaurantController::delete" type="service_closure" id=".service_locator.MfpZs.F"/>
         <argument key="App\Controller\ReservationRestaurantController::edit" type="service_closure" id=".service_locator.XwWjNG1"/>
         <argument key="App\Controller\ReservationRestaurantController::index" type="service_closure" id=".service_locator.9JmOAa6"/>
-        <argument key="App\Controller\ReservationRestaurantController::listadmin" type="service_closure" id=".service_locator.igSyiNQ"/>
+        <argument key="App\Controller\ReservationRestaurantController::listadmin" type="service_closure" id=".service_locator.4SSJ11l"/>
         <argument key="App\Controller\ReservationRestaurantController::new" type="service_closure" id=".service_locator.IjaHlA8"/>
         <argument key="App\Controller\ReservationRestaurantController::search" type="service_closure" id=".service_locator.GC8W5Nu"/>
         <argument key="App\Controller\ReservationRestaurantController::show" type="service_closure" id=".service_locator.F2x5AtQ"/>
@@ -8356,7 +8357,7 @@
         <argument key="App\Controller\ReservationRestaurantController:delete" type="service_closure" id=".service_locator.MfpZs.F"/>
         <argument key="App\Controller\ReservationRestaurantController:edit" type="service_closure" id=".service_locator.XwWjNG1"/>
         <argument key="App\Controller\ReservationRestaurantController:index" type="service_closure" id=".service_locator.9JmOAa6"/>
-        <argument key="App\Controller\ReservationRestaurantController:listadmin" type="service_closure" id=".service_locator.igSyiNQ"/>
+        <argument key="App\Controller\ReservationRestaurantController:listadmin" type="service_closure" id=".service_locator.4SSJ11l"/>
         <argument key="App\Controller\ReservationRestaurantController:new" type="service_closure" id=".service_locator.IjaHlA8"/>
         <argument key="App\Controller\ReservationRestaurantController:search" type="service_closure" id=".service_locator.GC8W5Nu"/>
         <argument key="App\Controller\ReservationRestaurantController:show" type="service_closure" id=".service_locator.F2x5AtQ"/>
@@ -10704,7 +10705,7 @@
     <service id="Vich\UploaderBundle\Form\Type\VichImageType" alias="vich_uploader.form.type.image"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.w7.f4fT" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.02Zimuh"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.jkWh5TB"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -10742,7 +10743,7 @@
     <service id=".service_locator.uIeUrOj" alias=".service_locator.IjaHlA8"/>
     <service id=".service_locator.z.6Kv_k" alias=".service_locator.XwWjNG1"/>
     <service id=".service_locator.mJ8dGiC" alias=".service_locator.MfpZs.F"/>
-    <service id=".service_locator._eCVeE7" alias=".service_locator.02Zimuh"/>
+    <service id=".service_locator.jsvQ95g" alias=".service_locator.jkWh5TB"/>
     <service id=".service_locator.BFrsqsn" alias=".service_locator.F9PKc.7"/>
     <service id=".service_locator.rh3XJqR" alias=".service_locator.4qlnHLP"/>
     <service id=".service_locator.FBc_U41" alias=".service_locator.JsvzaN7"/>
@@ -10796,7 +10797,7 @@
     <service id=".service_locator.lLhqMoG" alias=".service_locator.F6QSc9e"/>
     <service id=".service_locator.hq06EVy" alias=".service_locator.1wfHddh"/>
     <service id=".service_locator.UTqU3J." alias=".service_locator.9JmOAa6"/>
-    <service id=".service_locator.jhcgGpe" alias=".service_locator.igSyiNQ"/>
+    <service id=".service_locator.0q18q0S" alias=".service_locator.4SSJ11l"/>
     <service id=".service_locator.uYf5etN" alias=".service_locator.IjaHlA8"/>
     <service id=".service_locator.35q4DtN" alias=".service_locator.GC8W5Nu"/>
     <service id=".service_locator.8KFnZOB" alias=".service_locator.F2x5AtQ"/>

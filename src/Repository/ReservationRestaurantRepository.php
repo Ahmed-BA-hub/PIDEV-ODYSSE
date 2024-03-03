@@ -20,7 +20,16 @@ class ReservationRestaurantRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, ReservationRestaurant::class);
     }
-
+    public function findByDateAndRestaurant(\DateTimeInterface $date, int $restaurantId): array
+    {
+        return $this->createQueryBuilder('r')
+            ->andWhere('r.date = :date')
+            ->andWhere('r.restaurant = :restaurantId')
+            ->setParameter('date', $date)
+            ->setParameter('restaurantId', $restaurantId)
+            ->getQuery()
+            ->getResult();
+    }
     //    /**
     //     * @return ReservationRestaurant[] Returns an array of ReservationRestaurant objects
     //     */
